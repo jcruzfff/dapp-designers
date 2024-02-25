@@ -155,11 +155,18 @@ nav {
   font-weight: 900;
   text-align: center;
   line-height: 102px;
-  margin-top: 186px;
-  margin-bottom: 40px;
+  margin-top: 10%;
+  margin-bottom: 32px;
   letter-spacing: -1.8px;
 }
 
+.hero-subheader {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 42px;
+  width: 40%;
+  text-align: center;
+}
 
 .black-button {
   display: inline-flex;
@@ -1400,6 +1407,14 @@ footer {
 }
 
 @media screen and (max-width: 1300px) {
+
+  .hero-subheader {
+    font-size: 24px;
+    margin-bottom: 42px;
+    width: 50%;
+    ;
+  }
+
   .btn {
     font-size: 16px;
     white-space: nowrap;
@@ -1428,9 +1443,15 @@ footer {
 
 
 
+
 }
 
 @media screen and (max-width: 1200px) {
+
+  .hero-section {
+    height: 83vh
+  }
+
   .clients-section {
     height: 172px;
   }
@@ -1624,9 +1645,6 @@ footer {
     margin-right: 12px;
   }
 
-  .hero-section {
-    height: 90vh;
-  }
 
   h1.hero-title,
   .product-title {
@@ -1671,6 +1689,10 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+
+  .hero-section {
+    height: 83vh;
+  }
 
   .clients-section {
     height: 168px;
@@ -1851,6 +1873,10 @@ footer {
     margin-bottom: 24px;
   }
 
+  .hero-title {
+    margin-top: 15%;
+  }
+
   .black-button,
   .outline-button {
     height: 54px;
@@ -1885,6 +1911,8 @@ footer {
 
 
 @media screen and (max-width: 800px) {
+
+
 
   .user-experience-section {
     overflow: hidden;
@@ -2018,15 +2046,28 @@ footer {
     line-height: 58px;
   }
 
+  .hero-section {
+    height: 77vh;
+  }
+
   .dapp-designers-header {
     display: flex;
     font-size: 12px;
   }
 
-  .black-button,
-  .outline-button {
+  .black-button {
     padding: 14.5px 43.5px;
+    width: 100%;
   }
+
+  .hero-buttons {
+    width: 70vw;
+  }
+
+  .outline-button {
+    display: none;
+  }
+
 
 
   .feedback-section {
@@ -2118,7 +2159,9 @@ footer {
 
 @media screen and (max-width: 600px) {
 
-
+  .hero-subheader {
+    width: 70vw;
+  }
 
   .accessible-content-bullet {
     width: 90%;
@@ -2158,12 +2201,13 @@ footer {
   }
 
   .faq-question {
-    font-size: 14px;
+    font-size: 18px;
 
   }
 
   .faq-answer {
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 400;
   }
 
   .services-list {
@@ -2189,6 +2233,11 @@ footer {
   .black-button,
   .outline-button {
     padding: 14.5px 43.5px;
+  }
+
+  .black-button {
+    padding: 14.5px 24.5px;
+    width: 70vw;
   }
 
   .experience-title {
@@ -2249,6 +2298,19 @@ footer {
   .section-header-everyone {
     top: -42px;
   }
+
+  .hero-section {
+    height: 68vh;
+  }
+
+  .hero-subheader {
+    width: 70vw;
+  }
+
+  .section-header-everyone {
+    top: -55px;
+    letter-spacing: -1.3px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -2260,10 +2322,21 @@ footer {
   }
 
   .hero-image-container {
-    width: 200vw;
-    top: -12%;
-    left: -33%;
+    width: 291vw;
+    top: -18%;
+    left: -50%;
+  }
 
+  .hero-section {
+    height: 71vh;
+  }
+
+  .hero-subheader {
+    font-size: 22px;
+    font-weight: 400;
+    width: 72vw;
+    text-align: center;
+    margin-bottom: 32px;
   }
 
   .name-it-title {
@@ -2275,7 +2348,7 @@ footer {
     white-space: nowrap;
     margin-left: -4%;
     z-index: 1;
-    margin-top: 75%;
+    margin-top: 63%;
     line-height: 105%;
     justify-content: flex-start;
     height: 50vh;
@@ -2286,7 +2359,7 @@ footer {
     text-align: right;
     overflow-x: hidden;
     z-index: 1;
-    height: 101vh;
+    height: 78vh;
     width: 57vw;
     right: -2px;
     bottom: 0;
@@ -2369,8 +2442,26 @@ footer {
     padding: 14.5px 24.5px;
   }
 
+  .black-button {
+    padding: 14.5px 24.5px;
+    width: 70vw;
+  }
+
   .locations {
     font-size: 14px;
+  }
+
+  .hero-title {
+    margin-top: 25%;
+  }
+
+  .user-experience-section {
+    height: 113vh;
+  }
+
+  .top-choice-content {
+    height: 74vh;
+    padding-bottom: 24px;
   }
 
 }
