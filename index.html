@@ -67,7 +67,7 @@
       <div class="hero-buttons">
         <button class="black-button button" type="button" onclick="scrollToPricing()">View
           Pricing</button>
-        <button class="outline-button button" type="button" onclick="scrollToPricing()">Learn more
+        <button class="outline-button button" type="button" onclick="scrollToFaqs()">Learn more
           <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
             <path
               d="M25.2071 8.70711C25.5976 8.31658 25.5976 7.68342 25.2071 7.29289L18.8431 0.928932C18.4526 0.538408 17.8195 0.538408 17.4289 0.928932C17.0384 1.31946 17.0384 1.95262 17.4289 2.34315L23.0858 8L17.4289 13.6569C17.0384 14.0474 17.0384 14.6805 17.4289 15.0711C17.8195 15.4616 18.4526 15.4616 18.8431 15.0711L25.2071 8.70711ZM24.5 7L0.5 7V9L24.5 9V7Z"
@@ -169,7 +169,7 @@
           href="mailto:admin@dappdesigners?subject=Let's%20Chat&body=Hi%20there,%20I'm%20interested%20in%20chatting%20with%20you%20about%20my%20project%20idea.">
           <button class="btn lets-chat chat-learn-more" style="cursor: pointer;">Let's Chat</button>
         </a>
-        <button class="btn learn-more ux-learn-more">
+        <button class="btn learn-more ux-learn-more" type="button" onclick="scrollToFaqs()">
           Learn More<svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
             <path
               d="M25.2071 8.70711C25.5976 8.31658 25.5976 7.68342 25.2071 7.29289L18.8431 0.928932C18.4526 0.538408 17.8195 0.538408 17.4289 0.928932C17.0384 1.31946 17.0384 1.95262 17.4289 2.34315L23.0858 8L17.4289 13.6569C17.0384 14.0474 17.0384 14.6805 17.4289 15.0711C17.8195 15.4616 18.4526 15.4616 18.8431 15.0711L25.2071 8.70711ZM24.5 7L0.5 7V9L24.5 9V7Z"
@@ -298,7 +298,7 @@
             implementation. Offering any
             additional needs or adjustments to guarantee your satisfaction.</p>
         </div>
-        <button class="learn-more strategy-button">
+        <button class="learn-more strategy-button" onclick="scrollToFaqs()">
           Learn more<svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
             <path
               d="M25.2071 8.70711C25.5976 8.31658 25.5976 7.68342 25.2071 7.29289L18.8431 0.928932C18.4526 0.538408 17.8195 0.538408 17.4289 0.928932C17.0384 1.31946 17.0384 1.95262 17.4289 2.34315L23.0858 8L17.4289 13.6569C17.0384 14.0474 17.0384 14.6805 17.4289 15.0711C17.8195 15.4616 18.4526 15.4616 18.8431 15.0711L25.2071 8.70711ZM24.5 7L0.5 7V9L24.5 9V7Z"
@@ -564,7 +564,7 @@
     <img src="./images/dd-logo-separater.svg" alt="dapp-designers-logo" class="dapp-designers-logo-small" />
 
     <!--------------- FAQ Section -------------->
-    <div class="faq-section">
+    <div class="faq-section" id="faq-section">
       <div class="faq-title">Frequently Asked Questions
       </div>
       <div>
@@ -838,6 +838,11 @@
       function scrollToPricing() {
         const pricingSection = document.getElementById('pricing-section');
         pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function scrollToFaqs() {
+        const faqSection = document.getElementById('faq-section');
+        faqSection.scrollIntoView({ behavior: 'smooth' });
       }
 
       function sendEmail() {

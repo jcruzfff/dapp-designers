@@ -605,6 +605,8 @@ nav {
   /* Remove tap highlight */
   -webkit-appearance: none;
   /* Prevent default WebKit styling */
+  cursor: pointer;
+  margin-right: 38%;
 }
 
 .learn-more {
@@ -919,6 +921,7 @@ nav {
   margin-top: -24px;
   font-weight: 400;
   background-color: #ffffff;
+  margin-right: 38%;
 }
 
 
@@ -1701,6 +1704,10 @@ footer {
 
   .see-full {
     margin-bottom: -36px;
+  }
+
+  .strategy-button {
+    width: 100%;
   }
 }
 
