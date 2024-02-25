@@ -72,7 +72,8 @@
 
 
     <div class="name-it-section" id="web3-section">
-      <div> <img src="./images/hero-image.png" alt="dapp-design" class="hero-image-container" /></div>
+      <div class="hero-image"> <img src="./images/hero-image.png" alt="dapp-design" class="hero-image-container" />
+      </div>
       <div>
         <div class="name-it-title">
           <span class="logo-title">Logo,</span><span class="brand-title">Brand,</span><span
@@ -340,7 +341,15 @@
             $2,299.00<span class="subscriptions-period">/month</span>
           </div>
 
-          <button class="get-started">Get Started</button>
+
+          <div class="stripe-background">
+            <div class="stripe-button" id="startup">
+              <stripe-buy-button id="startup-button" buy-button-id="buy_btn_1OnXdTBQlrsabuPOx2kYt8fe"
+                publishable-key="pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh">
+              </stripe-buy-button>
+            </div>
+          </div>
+
 
           <div class="subscription-section">
             <div class="overview-subscription-section">
@@ -430,7 +439,14 @@
             $4,500.00<span class="subscriptions-period">/month</span>
           </div>
 
-          <button class="get-started">Get Started</button>
+          <div class="stripe-background">
+            <div class="stripe-button" id="enterprise">
+              <stripe-buy-button id="enterprise-button" buy-button-id="buy_btn_1OnYcuBQlrsabuPO4hbT9Sg4"
+                publishable-key="pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh">
+              </stripe-buy-button>
+            </div>
+          </div>
+
 
           <div class="subscription-section">
             <div class="overview-subscription-section">
@@ -510,7 +526,6 @@
         </div>
 
         <!-- Partnership Card -->
-
         <div class="pricing-card">
           <h2 class="pricing-card-title">Partnership</h2>
           <div class="subscriptions-subheader memorable-card">
@@ -926,24 +941,71 @@
       });
 
       document.addEventListener("DOMContentLoaded", function () {
+
+        var startupButton = document.getElementById('startup')
+        var enterpriseButton = document.getElementById('enterprise')
+
+
         // Set 'Monthly' as the active option on page load
         document.querySelector('.monthly').classList.add('active');
         document.querySelector('.quarterly').classList.remove('active');
         // Initially display 'Monthly' pricing
         updatePricing('monthly');
 
-        document.querySelector('.monthly').addEventListener('click', function () {
-          this.classList.add('active');
-          document.querySelector('.quarterly').classList.remove('active');
-          updatePricing('monthly');
-        });
-
         document.querySelector('.quarterly').addEventListener('click', function () {
           this.classList.add('active');
           document.querySelector('.monthly').classList.remove('active');
           updatePricing('quarterly');
+
+          while (startupButton.firstChild) {
+            startupButton.removeChild(startupButton.firstChild);
+          }
+
+          while (enterpriseButton.firstChild) {
+            enterpriseButton.removeChild(enterpriseButton.firstChild);
+          }
+
+          var newButton = document.createElement('stripe-buy-button')
+          var newButton2 = document.createElement('stripe-buy-button')
+
+          // Startup
+          newButton.setAttribute("buy-button-id", "buy_btn_1OnYztBQlrsabuPOMCVVal2K")
+          newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+          startupButton.appendChild(newButton)
+          // Enterprise
+          newButton2.setAttribute("buy-button-id", "buy_btn_1OnZBIBQlrsabuPO4aQotVd7")
+          newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+          enterpriseButton.appendChild(newButton2)
         });
+
+        document.querySelector('.monthly').addEventListener('click', function () {
+          this.classList.add('active');
+          document.querySelector('.quarterly').classList.remove('active');
+          updatePricing('monthly');
+
+          while (startupButton.firstChild) {
+            startupButton.removeChild(startupButton.firstChild);
+          }
+
+          while (enterpriseButton.firstChild) {
+            enterpriseButton.removeChild(enterpriseButton.firstChild);
+          }
+          var newButton = document.createElement('stripe-buy-button')
+          var newButton2 = document.createElement('stripe-buy-button')
+
+          // Startup
+          newButton.setAttribute("buy-button-id", "buy_btn_1OnXdTBQlrsabuPOx2kYt8fe")
+          newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+          startupButton.appendChild(newButton)
+          // Enterprise
+          newButton2.setAttribute("buy-button-id", "buy_btn_1OnYcuBQlrsabuPO4hbT9Sg4")
+          newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+          enterpriseButton.appendChild(newButton2)
+        });
+
       });
+    </script>
+    <script async src="https://js.stripe.com/v3/buy-button.js">
     </script>
 </body>
 

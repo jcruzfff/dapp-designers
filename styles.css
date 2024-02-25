@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+.par {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--background);
   display: flex;
@@ -230,6 +234,8 @@ nav {
   background-color: #2d1f4c;
   color: white;
   z-index: 2;
+
+
   /* Lower z-index, ensures .dapp-design-image is on top */
 }
 
@@ -243,6 +249,7 @@ nav {
   z-index: 10;
   transition: position 0.5s ease;
 }
+
 
 .faded-logo {
   position: relative;
@@ -459,6 +466,7 @@ nav {
   position: relative;
   justify-content: space-between;
   padding-bottom: 0;
+  overflow-x: hidden;
 }
 
 
@@ -926,9 +934,35 @@ nav {
   margin-bottom: 46px;
 }
 
+
 .get-started:hover {
   cursor: pointer;
 }
+
+.stripe-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #897ae6;
+  height: 48px;
+  border-radius: 32px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.stripe-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #897ae6;
+  overflow-x: hidden;
+  border-radius: 32px;
+  height: 30px;
+  overflow: hidden;
+  padding-top: 4px;
+}
+
+
 
 .pricing-card-title {
   font-size: 32px;
@@ -1530,6 +1564,7 @@ footer {
     margin-bottom: 36px
   }
 
+
   .see-full {
     margin-bottom: -36px;
   }
@@ -1696,10 +1731,11 @@ footer {
 
   .faq-title {
     white-space: nowrap;
-    font-size: 5vw;
+    font-size: 24px;
     margin-top: 1px;
     width: 100%;
     text-align: center;
+    letter-spacing: -1px;
   }
 
   .faq-question {
@@ -1925,6 +1961,16 @@ footer {
   .dd-logo-round {
     width: 120px;
   }
+
+  .product-mobile-phone {
+    width: 100%;
+  }
+
+  .strategy {
+    color: black;
+    text-shadow: none;
+    letter-spacing: -1.8px;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -1934,6 +1980,12 @@ footer {
     font-size: 52px;
     line-height: 58px;
   }
+
+  .black-button,
+  .outline-button {
+    padding: 14.5px 43.5px;
+  }
+
 
   .feedback-section {
     width: 100%;
@@ -1991,6 +2043,7 @@ footer {
   .accessible-button {
     margin-top: 72px;
     margin-bottom: -42px;
+    width: 90%;
   }
 
   .nav-button {
@@ -2009,6 +2062,12 @@ footer {
 
 @media screen and (max-width: 600px) {
 
+
+
+  .accessible-content-bullet {
+    width: 90%;
+  }
+
   .mgd-phones {
     right: 109%;
   }
@@ -2025,13 +2084,27 @@ footer {
     height: 142vh;
   }
 
+  .ux-learn-more {
+    margin-right: 0px;
+  }
+
   .mobile-backdrop {
     right: 103px;
     bottom: -427px;
+    position: sticky;
+  }
+
+  .faq-content-header {
+    padding-right: 0px;
+  }
+
+  .faq-section {
+    width: 90%;
   }
 
   .faq-question {
     font-size: 14px;
+
   }
 
   .faq-answer {
@@ -2067,10 +2140,17 @@ footer {
 
 @media screen and (max-width: 500px) {
 
+  h1.hero-title,
+  .product-title {
+    font-size: 46px;
+    line-height: 52px;
+  }
+
   .hero-image-container {
     width: 200vw;
     top: -12%;
     left: -33%;
+
   }
 
   .name-it-title {
@@ -2099,11 +2179,29 @@ footer {
     bottom: 0;
   }
 
+  .clients-section {
+    padding-left: 9%;
+  }
+
+  .previous-client {
+    margin-right: 14px;
+  }
+
+  .accessible-section {
+    margin-top: 150px;
+    margin-bottom: 120px;
+  }
+
   .deliver-title {
     position: absolute;
     margin-left: -2%;
     font-size: 4vw;
-    margin-top: -76px;
+    margin-top: -50px;
+  }
+
+  .product-subheader {
+    width: 60%;
+    margin: auto;
   }
 
   .user-experience-section {
@@ -2125,8 +2223,16 @@ footer {
     margin-left: 20px;
   }
 
+  .top-choice-content {
+    height: 109vh;
+  }
+
   .objects {
     margin-top: -62px;
+  }
+
+  .accessible-title {
+    font-size: 42px;
   }
 
   .section-header-pricing {
@@ -2151,25 +2257,24 @@ footer {
   .input-email {
     width: 44vw;
   }
-}
-
-@media screen and (max-width: 460px) {
-
-  h1.hero-title,
-  .product-title {
-    font-size: 46px;
-    line-height: 52px;
-  }
 
   .black-button,
   .outline-button {
-    padding: 14.5px 33.5px;
+    padding: 14.5px 24.5px;
   }
 }
+
 
 @media screen and (max-width: 450px) {
   .user-experience-section {
     height: 105vh;
+  }
+
+
+  .pricing-card {
+    width: 382px;
+    padding: 48px;
+    height: 635px;
   }
 }
 
@@ -2178,11 +2283,11 @@ footer {
   h1.hero-title,
   .product-title {
     font-size: 42px;
-    line-height: 46px;
+    line-height: 52px;
   }
 
   .black-button,
   .outline-button {
-    padding: 14.5px 28.5px;
+    padding: 14.5px 22.5px;
   }
 }
