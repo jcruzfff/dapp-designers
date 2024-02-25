@@ -56,6 +56,10 @@ nav {
   cursor: pointer;
   font-family: "Poppins";
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 
@@ -172,6 +176,10 @@ nav {
   line-height: 121.5%;
   border: none;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .outline-button {
@@ -190,12 +198,20 @@ nav {
   gap: 10px;
   margin-left: 12px;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 
 .hero-buttons {
   gap: 24px;
   margin-bottom: 128px;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .button:hover {
@@ -449,7 +465,10 @@ nav {
   text-decoration: none;
   margin: auto;
   margin-top: 72px;
-
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .status-bar {
@@ -510,6 +529,10 @@ nav {
 .btns {
   display: flex;
   flex-direction: row;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .btn {
@@ -522,6 +545,10 @@ nav {
   background: white;
   border: none;
   font-size: 24px;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .btn:hover {
@@ -535,6 +562,10 @@ nav {
   border: 2px solid #897ae6;
   display: flex;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .learn-more svg {
@@ -733,6 +764,10 @@ nav {
 
 .second-btn-choice {
   display: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 /* ----------------------- Strategy Section -------------------------*/
