@@ -41,8 +41,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   margin-left: 82px;
+}
+
+.logo {
+  width: 42px;
 }
 
 .nav-button {
@@ -414,18 +418,26 @@ nav {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 161px;
-  margin-bottom: 161px;
+  padding-top: 161px;
+  padding-bottom: 161px;
+  background-image: url(./images/accessible-background.png);
+  background-size: cover;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #6455A8;
 }
 
 .accessible-title {
   font-size: 84px;
   letter-spacing: -1.8px;
+  margin-bottom: 24px;
 }
 
-.accessible {
-  color: #897AE6;
+.accessible-subheader {
+  font-size: 24px;
 }
+
 
 .accessible-content {
   display: flex;
@@ -438,33 +450,46 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  width: 282px;
+  align-items: left;
   margin: auto;
 }
 
 
 .accessible-logo {
-  width: 175px;
+  width: 115px;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: -57.5px;
   margin-top: 80px;
+  margin-left: 24px;
+  z-index: 3;
 }
 
 .accessible-content-title {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  width: 24vw;
+  height: 200px;
+  background-color: #ffffff0c;
+  padding: 24px;
+  padding-top: 72px;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid #A69DCD;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: #2d1f4c1a;
 }
 
 .accessible-content-subtext {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Poppins;
   font-weight: 300;
   line-height: 24px;
-  color: #666666;
-  margin-top: 16px;
-  margin-bottom: 52px;
+  color: #e1e1e1;
+  margin-top: 12px;
+  padding-bottom: 10px;
 }
 
 .accessible-button {
@@ -472,6 +497,8 @@ nav {
   text-decoration: none;
   margin: auto;
   margin-top: 72px;
+  background-color: white;
+  color: #171717;
   -webkit-tap-highlight-color: transparent;
   /* Remove tap highlight */
   -webkit-appearance: none;
@@ -482,6 +509,7 @@ nav {
   width: 72%;
   margin: auto;
   padding-left: 26px;
+  margin-top: 40px;
 }
 
 
@@ -560,6 +588,22 @@ nav {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.strategy-button {
+  margin-right: 12px;
+  padding: 16.5px 53.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 32px;
+  background: white;
+  border: none;
+  font-size: 24px;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight */
+  -webkit-appearance: none;
+  /* Prevent default WebKit styling */
 }
 
 .learn-more {
@@ -786,7 +830,7 @@ nav {
   text-align: center;
   margin: 0;
   padding: 0%;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .section-header-strategy {
@@ -836,7 +880,7 @@ nav {
   padding: 62px 0px;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: #897AE6;
   margin-top: -170px;
 }
 
@@ -853,25 +897,27 @@ nav {
   gap: 16px;
   font-size: 36px;
   font-weight: 500;
-  color: #171717;
-  margin-bottom: 24px;
+  color: #ffffff;
+  margin-bottom: -30px;
 }
 
 .strategy-bullet-subheader {
   box-sizing: border-box;
-  padding-left: 56px;
+  padding-left: 101px;
   margin-bottom: 62px;
   font-size: 24px;
   font-weight: 300;
+  color: white;
 }
 
 .strategy-button {
-  color: black;
+  color: #171717;
   width: 264px;
   white-space: nowrap;
   margin: auto;
   margin-top: -24px;
   font-weight: 400;
+  background-color: #ffffff;
 }
 
 
@@ -1203,7 +1249,7 @@ nav {
 .faq-border {
   margin-top: 32px;
   margin-bottom: 32px;
-  border: 1px solid #CECECE;
+  border: 1px solid #E5E5E5;
 }
 
 .faq-question {
@@ -1397,6 +1443,11 @@ footer {
   .btn {
     font-size: 20px;
   }
+
+  .accessible-content-title {
+    height: 212px;
+  }
+
 }
 
 @media screen and (max-width:1400px) {
@@ -1433,6 +1484,14 @@ footer {
     margin-right: 10px;
   }
 
+  .accessible-content {
+    width: 84%;
+  }
+
+  .accessible-content-title {
+    width: 27vw;
+  }
+
   .faq-title {
     font-size: 48px
   }
@@ -1461,13 +1520,12 @@ footer {
   }
 
   .accessible-content-title {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .accessible-content-subtext {
-    font-size: 18px;
+    font-size: 16px;
   }
-
 
   .mobile-phones-experience {
     width: 46vw;
@@ -1657,6 +1715,14 @@ footer {
     margin-left: 2px
   }
 
+  .accessible-section {
+    padding-top: 10%;
+    padding-bottom: 7%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #6455A8;
+  }
+
   .accessible-content {
     width: 85%;
   }
@@ -1677,6 +1743,14 @@ footer {
 
   .accessible-title {
     font-size: 64px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 24px;
+  }
+
+  .accessible-subheader {
+    width: 60%;
+    margin: auto;
   }
 
   .objects {
@@ -1841,24 +1915,39 @@ footer {
   .accessible-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90vw;
     margin: auto;
   }
 
   .accessible-content-bullet {
-    width: 60%;
+    width: 90vw;
+  }
+
+  .accessible-content-title {
+    width: 90vw;
+    height: 180px;
   }
 
   .accessible-logo {
-    margin-bottom: 32px;
-    margin-top: 32px;
+    margin-top: 24px;
   }
 
   .accessible-content-title {
     margin-bottom: 0px;
   }
 
+  .status-bar {
+    display: none;
+  }
+
 }
+
+/* @media screen and (max-width:900) {
+  .accessible-title {
+    font-size: 64px;
+   
+  }
+} */
 
 
 @media screen and (max-width:860px) {
@@ -1962,7 +2051,7 @@ footer {
 
   .strategy-bullet-header {
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: -18px;
   }
 
   .strategy-bullet-subheader {
@@ -1972,11 +2061,11 @@ footer {
   .discover-logo,
   .creative-logo,
   .delivery-logo {
-    width: 24px;
+    width: 56px;
   }
 
   .strategy-bullet-subheader {
-    margin-left: -16px;
+    margin-left: -26px;
   }
 
   .strategy-content {
@@ -1986,7 +2075,7 @@ footer {
   .section-header-pricing {
     font-size: 42px;
     font-weight: 600;
-    margin-top: 62px;
+    margin-top: 12px;
     margin-bottom: 12px;
   }
 
@@ -2036,6 +2125,21 @@ footer {
     letter-spacing: -1.8px;
   }
 
+  .accessible-button {
+    margin-top: 38px;
+    margin-bottom: 0px;
+    width: 90%;
+  }
+
+  .accessible-subheader {
+    font-size: 18px;
+  }
+
+  .strategy-button {
+    width: 90vw;
+    margin-top: 0px;
+  }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -2050,6 +2154,10 @@ footer {
     height: 77vh;
   }
 
+  .hero-subheader {
+    width: 77%;
+  }
+
   .dapp-designers-header {
     display: flex;
     font-size: 12px;
@@ -2057,7 +2165,11 @@ footer {
 
   .black-button {
     padding: 14.5px 43.5px;
-    width: 100%;
+    width: 90%;
+  }
+
+  .hero-button {
+    width: 100%
   }
 
   .hero-buttons {
@@ -2067,8 +2179,6 @@ footer {
   .outline-button {
     display: none;
   }
-
-
 
   .feedback-section {
     width: 100%;
@@ -2121,12 +2231,11 @@ footer {
     font-size: 50px;
     width: 90%;
     margin: auto;
+    margin-bottom: 24px;
   }
 
-  .accessible-button {
-    margin-top: 72px;
-    margin-bottom: -42px;
-    width: 90%;
+  .accessible-subheader {
+    width: 80%;
   }
 
   nav {
@@ -2163,9 +2272,6 @@ footer {
     width: 70vw;
   }
 
-  .accessible-content-bullet {
-    width: 90%;
-  }
 
   .mgd-phones {
     right: 104%;
@@ -2176,7 +2282,8 @@ footer {
   }
 
   .product-subheader {
-    font-size: 14px;
+    width: 80%;
+    margin: auto;
   }
 
   .user-experience-section {
@@ -2222,9 +2329,6 @@ footer {
     height: 24px;
   }
 
-  .accessible-title {
-    margin-top: -80px;
-  }
 
   .accessible-content-subtext {
     margin-bottom: 24px;
@@ -2251,7 +2355,7 @@ footer {
   }
 
   footer {
-    height: 60vh;
+    height: 50vh;
   }
 
   .input-email {
@@ -2368,11 +2472,6 @@ footer {
 
   .previous-client {
     height: 20px;
-  }
-
-  .accessible-section {
-    margin-top: 150px;
-    margin-bottom: 120px;
   }
 
   .deliver-title {
@@ -2502,6 +2601,10 @@ footer {
   .top-choice-content {
     width: 95%;
   }
+
+  .hero-subheader {
+    width: 90vw;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -2526,6 +2629,8 @@ footer {
   .previous-client {
     height: 16px;
   }
+
+
 
 }
 
