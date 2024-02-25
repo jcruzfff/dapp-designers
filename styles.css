@@ -1309,7 +1309,10 @@ nav {
 }
 
 .everyone-section {
-  background-color: #f4f4f4;
+  background-image: url(./images/everyone-background.png);
+  background-size: cover;
+  background-color: #ffffff;
+  padding-bottom: 48px;
 
 }
 
@@ -1338,9 +1341,12 @@ nav {
 
 .services-list {
   list-style: none;
-  font-family: "Poppins";
   font-size: 36px;
-  font-weight: 200;
+  font-weight: 400;
+}
+
+li {
+  margin-bottom: 6px;
 }
 
 /* ----------- Footer----------- */
@@ -2413,7 +2419,7 @@ footer {
   }
 
   .section-header-everyone {
-    top: -42px;
+    top: -47px;
   }
 
   .hero-section {
@@ -2425,7 +2431,7 @@ footer {
   }
 
   .section-header-everyone {
-    top: -55px;
+    top: -57px;
     letter-spacing: -1.3px;
   }
 }
