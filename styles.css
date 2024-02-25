@@ -2641,6 +2641,10 @@ footer {
   .section-header-everyone {
     top: -44px;
   }
+
+  .top-choice-title {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 388px) {
@@ -2660,7 +2664,9 @@ footer {
     height: 16px;
   }
 
-
+  .accessible-content-subtext {
+    font-size: 14px;
+  }
 
 }
 
