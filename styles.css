@@ -723,7 +723,7 @@ nav {
   background-image: url("./images/top-choice-background.png");
   background-size: cover;
   background-repeat: none;
-  height: 1117px;
+  height: 110vh;
   width: auto;
   margin-top: 100px;
   color: white;
@@ -731,7 +731,7 @@ nav {
 
 .top-choice-content {
   background-color: #202020;
-  height: 35%;
+  height: 40%;
   width: 75%;
   margin: auto;
   border-radius: 58px;
@@ -1852,7 +1852,6 @@ footer {
   }
 
   .faq-title {
-    white-space: nowrap;
     font-size: 36px;
     margin-top: 1px;
   }
@@ -1876,8 +1875,8 @@ footer {
 @media screen and (max-width: 960px) {
 
   .faq-title {
-    white-space: nowrap;
-    font-size: 24px;
+
+    font-size: 32px;
     margin-top: 1px;
     width: 100%;
     text-align: center;
@@ -2009,10 +2008,9 @@ footer {
 
 @media screen and (max-width: 800px) {
 
-
-
   .user-experience-section {
     overflow: hidden;
+    margin-bottom: 64px;
   }
 
   .experience-title {
@@ -2213,7 +2211,7 @@ footer {
   }
 
   .top-choice-title {
-    font-size: 28px;
+    font-size: 32px;
     letter-spacing: -1px;
   }
 
@@ -2348,6 +2346,11 @@ footer {
     height: 24px;
   }
 
+  .accessible-section {
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
 
   .accessible-content-subtext {
     margin-bottom: 24px;
@@ -2370,7 +2373,7 @@ footer {
   }
 
   .top-choice-section {
-    height: 100vh;
+    height: 90vh;
   }
 
   footer {
@@ -2496,7 +2499,7 @@ footer {
 
 
   .product-subheader {
-    width: 60%;
+    width: 75%;
     margin: auto;
   }
 
@@ -2624,11 +2627,19 @@ footer {
   .hero-subheader {
     width: 90vw;
   }
+
+  .section-header-everyone {
+    top: -49px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .user-experience-section {
     height: 102vh;
+  }
+
+  .section-header-everyone {
+    top: -44px;
   }
 }
 
