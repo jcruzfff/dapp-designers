@@ -1080,7 +1080,11 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   height: auto;
-  width: 264px;
+  width: 100%;
+}
+
+.overview-subscription-section {
+  width: 73%;
 }
 
 .price {
@@ -1131,6 +1135,7 @@ nav {
   align-items: center;
   height: 36px;
   padding-bottom: 6px;
+  padding-left: 38px;
 }
 
 .overview-title {
@@ -2660,12 +2665,28 @@ footer {
     padding: 14.5px 22.5px;
   }
 
+  .subscription-section {
+    min-width: 75%;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .package-overview {
+    font-size: 10px;
+  }
+
   .previous-client {
     height: 16px;
   }
 
   .accessible-content-subtext {
     font-size: 14px;
+  }
+
+  .value {
+    padding-left: 38px;
   }
 
 }
