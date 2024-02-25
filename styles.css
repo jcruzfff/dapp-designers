@@ -172,7 +172,9 @@ nav {
   text-align: center;
 }
 
-.black-button {
+.black-button,
+.accessible-button,
+.product-button {
   display: inline-flex;
   padding: 16.5px 53.5px;
   justify-content: center;
@@ -1976,6 +1978,7 @@ footer {
   .accessible-button {
     margin: auto;
     margin-top: 72px;
+    height: 52px;
   }
 
   .mgd-phones {
@@ -2129,6 +2132,7 @@ footer {
     margin-top: 38px;
     margin-bottom: 0px;
     width: 90%;
+    font-size: 18px;
   }
 
   .accessible-subheader {
@@ -2138,6 +2142,12 @@ footer {
   .strategy-button {
     width: 90vw;
     margin-top: 0px;
+    font-size: 18px;
+  }
+
+  .product-button {
+    height: 56px;
+    font-size: 18px;
   }
 
 }
@@ -2478,7 +2488,7 @@ footer {
     position: absolute;
     margin-left: -2%;
     font-size: 4vw;
-    margin-top: -50px;
+    margin-top: -92px;
   }
 
   .product-subheader {
@@ -2546,6 +2556,11 @@ footer {
     width: 70vw;
   }
 
+  .accesible-button {
+    padding: 14.5px 24.5px;
+    width: 90vw
+  }
+
   .locations {
     font-size: 14px;
   }
@@ -2604,6 +2619,12 @@ footer {
 
   .hero-subheader {
     width: 90vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .deliver-title {
+    margin-top: -133px;
   }
 }
 
