@@ -294,10 +294,9 @@ nav {
 }
 
 .deliver-title {
-  margin-left: 20%;
-  font-size: 2vw;
+  font-size: 20px;
+  margin-left: 6px;
   font-weight: 300;
-
 }
 
 .logo-title {
@@ -2150,6 +2149,10 @@ footer {
     font-size: 18px;
   }
 
+  .locations {
+    margin-top: 93px;
+  }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -2466,6 +2469,7 @@ footer {
     line-height: 105%;
     justify-content: flex-start;
     height: 50vh;
+    z-index: 4;
   }
 
   .faded-logo {
@@ -2484,12 +2488,6 @@ footer {
     height: 20px;
   }
 
-  .deliver-title {
-    position: absolute;
-    margin-left: -2%;
-    font-size: 4vw;
-    margin-top: -92px;
-  }
 
   .product-subheader {
     width: 60%;
@@ -2619,12 +2617,6 @@ footer {
 
   .hero-subheader {
     width: 90vw;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .deliver-title {
-    margin-top: -133px;
   }
 }
 
