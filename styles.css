@@ -1,0 +1,2188 @@
+:root {
+  --background: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24px;
+  align-items: center;
+  margin-right: 82px;
+  font-size: 20px;
+  color: #7c7a7a;
+  font-family: "Poppins";
+}
+
+
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-left: 82px;
+}
+
+.nav-button {
+  border: none;
+  text-decoration: none;
+  margin-right: 24px;
+  color: #7c7a7a;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+/* .gallery {
+  display: flex;
+  gap: 1rem;
+  max-width: 80rem;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  left: 0px;
+  width: 6rem;
+  border-radius: 1.2rem;
+  height: 20rem;
+  overflow: hidden;
+  background-color: var(--background);
+  transition: 0.4s ease-in-out;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+  flex: 0.25;
+  margin-top: 50%;
+  margin-bottom: 72px;
+}
+
+.card img {
+  position: relative;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card:hover {
+  flex: 2;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.card:nth-child(1) img {
+  left: -8rem;
+}
+
+.card:nth-child(2) img {
+  left: -6rem;
+}
+
+.card:nth-child(3) img {
+  left: -14rem;
+}
+
+.card:nth-child(4) img {
+  left: -8rem;
+} */
+
+/* .section-number {
+  position: relative;
+  display: flex;
+  margin: auto;
+  font-size: 72px;
+  gap: 40px;
+  margin-bottom: 220px;
+}
+
+.section-line {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  width: 40px;
+  height: 0;
+  margin: auto;
+} */
+
+
+/*   Hero Section  */
+
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./images/hero-background.png");
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  max-height: 100vh;
+
+}
+
+.hero-title {
+  font-size: 92px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 102px;
+  margin-top: 186px;
+  margin-bottom: 40px;
+  letter-spacing: -1.8px;
+}
+
+
+.black-button {
+  display: inline-flex;
+  padding: 16.5px 53.5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  background: #171717;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.5%;
+  border: none;
+}
+
+.outline-button {
+  display: inline-flex;
+  padding: 16.5px 53.5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  border: 2px solid #897AE6;
+  background: #FFF;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 121.5%;
+  gap: 10px;
+  margin-left: 12px;
+}
+
+
+.hero-buttons {
+  gap: 24px;
+  margin-bottom: 128px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+
+
+/*   Name it Section    */
+
+
+
+.name-it-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 9vw;
+  text-align: left;
+  white-space: nowrap;
+  margin-left: 18%;
+  z-index: 1;
+  margin-top: 20%;
+  line-height: 105%;
+}
+
+.par,
+.hero-section,
+.hero-image-container {
+  position: relative;
+}
+
+
+
+.name-it-section {
+  position: relative;
+  /* Establish context, may not be necessary unless you need specific stacking */
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+  background-color: #2d1f4c;
+  color: white;
+  z-index: 2;
+  /* Lower z-index, ensures .dapp-design-image is on top */
+}
+
+
+.hero-image-container {
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 119vw;
+  height: auto;
+  z-index: 10;
+  transition: position 0.5s ease;
+}
+
+.faded-logo {
+  position: relative;
+  /* Position context for z-index */
+  text-align: right;
+  overflow-x: hidden;
+  z-index: 1;
+  /* Ensure it's below the hero image */
+}
+
+.deliver-title {
+  margin-left: 20%;
+  font-size: 2vw;
+  font-weight: 300;
+
+}
+
+.logo-title {
+  font-weight: 100;
+  letter-spacing: -1.8px;
+}
+
+.brand-title {
+  font-weight: 300;
+  letter-spacing: -1.8px;
+}
+
+.website-title {
+  font-weight: 400;
+  letter-spacing: -1.8px;
+}
+
+.nameit-title {
+  font-weight: 500;
+  z-index: 1;
+  letter-spacing: -1.8px;
+}
+
+/* --------- Scroll Section----------- */
+
+/* .scroll-section {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-guide {
+  transform: rotate(-90deg);
+  font-size: 24px;
+  margin-top: 160px;
+}
+.border-guide {
+  text-align: center;
+}
+
+.scroll-page-number {
+  text-align: center;
+  color: #131313;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.scroll-one {
+  margin-top: 55%;
+}
+
+.indicator,
+.product-designers {
+  flex: 0 0 25%;
+}
+
+.middle-section {
+  position: relative;
+  display: flex;
+  flex: 0 0 50%;
+  height: 100vh;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.middle-section::-webkit-scrollbar {
+  display: none;
+}
+
+.product-shot {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  height: 4061px;
+}
+
+.product-designers {
+  position: relative;
+  right: 319px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 64px;
+  font-weight: 600;
+  white-space: nowrap;
+  top: 220px;
+}
+
+.job-title {
+  font-size: 24px;
+  font-weight: 400;
+} */
+
+/*  -------- Clients -------- */
+
+.clients-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #f4f4f4;
+  height: 223px;
+  text-align: center;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+.previous-client {
+  height: 70px;
+  width: auto;
+}
+
+
+/* ------------Accessible Section----------- */
+
+.accessible-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 161px;
+  margin-bottom: 161px;
+}
+
+.accessible-title {
+  font-size: 84px;
+  letter-spacing: -1.8px;
+}
+
+.accessible {
+  color: #897AE6;
+}
+
+.accessible-content {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: auto;
+}
+
+.accessible-content-bullet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 282px;
+  margin: auto;
+}
+
+
+.accessible-logo {
+  width: 175px;
+  height: auto;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+
+.accessible-content-title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.accessible-content-subtext {
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 300;
+  line-height: 24px;
+  color: #666666;
+  margin-top: 16px;
+  margin-bottom: 52px;
+}
+
+.accessible-button {
+  width: 242px;
+  margin: auto;
+  margin-top: 72px;
+}
+
+.status-bar {
+  width: 72%;
+  margin: auto;
+  padding-left: 26px;
+}
+
+
+
+/* -------- User Experience Section----------- */
+
+.user-experience-section {
+  display: flex;
+  width: 100%;
+  height: 115vh;
+  background-color: #131313;
+  color: white;
+  padding: 8%;
+  position: relative;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+
+.experience-title {
+  position: relative;
+  width: 45vw;
+  height: auto;
+  z-index: 3;
+}
+
+.mgd-phones {
+  position: relative;
+  display: flex;
+  right: 5%;
+}
+
+.mobile-phones-experience {
+  position: absolute;
+  bottom: 0;
+  width: 45vw;
+  height: auto;
+  max-height: 74%;
+  z-index: 3;
+}
+
+.mobile-backdrop {
+  width: 837px;
+  height: 837px;
+  flex-shrink: 0;
+  border-radius: 837px;
+  background: radial-gradient(44.97% 44.97% at 50% 65.05%, #ABABAB 41.49%, #131313 100%);
+  filter: blur(340.50299072265625px);
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  margin-right: 12px;
+  padding: 16.5px 53.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 32px;
+  background: white;
+  border: none;
+  font-size: 24px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.learn-more {
+  background: none;
+  color: white;
+  border-radius: 32px;
+  border: 2px solid #897ae6;
+  display: flex;
+  align-items: center;
+}
+
+.learn-more svg {
+  margin-left: 6px;
+}
+
+.page-number {
+  transform: rotate(-90deg);
+  font-size: 72px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.future {
+  font-size: 24px;
+  font-weight: 200;
+  font-family: "Poppins";
+}
+
+.page-section {
+  position: absolute;
+  display: flex;
+  text-align: right;
+  right: 10%;
+  z-index: 3;
+  right: 3%;
+  flex-direction: column;
+}
+
+.border-experience {
+  margin-right: 21px;
+  margin-top: 51px;
+  position: relative;
+  right: -108px;
+}
+
+.btns {
+  position: relative;
+  z-index: 12;
+  margin-top: 24px;
+}
+
+.ux-learn-more {
+  background-color: #131313;
+}
+
+
+
+/* -------- Product Section----------- */
+
+.product-section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-image: url("./images/product-background.png");
+  background-size: cover;
+  background-repeat: none;
+  background-color: white;
+  text-align: center;
+
+}
+
+.product-title {
+  font-size: 84px;
+  margin-top: 10%;
+  letter-spacing: -1.8px;
+}
+
+.product-subheader {
+  font-size: 24px;
+  color: #666666;
+  margin-top: 12px;
+}
+
+.product-button {
+  margin-top: 32px;
+  gap: 12px;
+}
+
+.product-mobiles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.product-mobile-phone {
+  width: 80%;
+  height: auto;
+}
+
+/* ----------------------- Top-Choice Section -------------------------*/
+
+
+.top-choice-section {
+  display: flex;
+  position: relative;
+  background-image: url("./images/top-choice-background.png");
+  background-size: cover;
+  background-repeat: none;
+  height: 1117px;
+  width: auto;
+  margin-top: 100px;
+  color: white;
+}
+
+.top-choice-content {
+  background-color: #202020;
+  height: 35%;
+  width: 75%;
+  margin: auto;
+  border-radius: 58px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 68px 110px;
+}
+
+.top-choice-title {
+  font-size: 64px;
+  letter-spacing: -1.76px;
+  white-space: nowrap;
+}
+
+.top-choice-subheader {
+  font-size: 24px;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.founders-buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 52px;
+  gap: -12px;
+  margin-bottom: 0px;
+}
+
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.feedback-img {
+  width: 32px;
+  height: 32px;
+}
+
+.feedback-founder {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.feedback-img {
+  margin-right: 16px;
+}
+
+.founder-company {
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.founder {
+  font-weight: 300;
+}
+
+.founder-border {
+  position: relative;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+#founders-img {
+  display: flex;
+  position: absolute;
+  right: 12.5%;
+  margin-top: 144px;
+  width: 10%;
+  height: auto;
+}
+
+.second-btn-choice {
+  display: none;
+}
+
+/* ----------------------- Strategy Section -------------------------*/
+
+.strategy-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0%;
+  margin-bottom: 100px;
+}
+
+.section-header-strategy {
+  margin-top: 42px;
+  margin-bottom: 16px;
+  font-size: 9vw;
+  font-weight: 600;
+}
+
+.strategy {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.strategy-subheader {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  right: 9%;
+}
+
+.section-subheader-strategy {
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 40px;
+  margin-bottom: 48px;
+}
+
+.strategy-border {
+  position: relative;
+  display: flex;
+  border: 1px solid black;
+  transform: rotate(90deg);
+  bottom: 106px;
+  right: 98px;
+  height: 248px;
+  width: 0px;
+}
+
+.objects {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: auto;
+  padding: 62px 0px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  margin-top: -170px;
+}
+
+.strategy-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 60%;
+  height: auto;
+}
+
+.strategy-bullet-header {
+  display: flex;
+  gap: 16px;
+  font-size: 36px;
+  font-weight: 500;
+  color: #171717;
+  margin-bottom: 24px;
+}
+
+.strategy-bullet-subheader {
+  box-sizing: border-box;
+  padding-left: 56px;
+  margin-bottom: 62px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.strategy-button {
+  color: black;
+  width: 264px;
+  white-space: nowrap;
+  margin: auto;
+  margin-top: -24px;
+  font-weight: 400;
+}
+
+
+/* -----------Pricing Section----------- */
+
+.pricing-section {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("./images/evolve-background.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.section-header-pricing {
+  font-size: 64px;
+  font-weight: 600;
+  margin-top: 62px;
+  margin-bottom: 24px;
+  letter-spacing: -1.8px;
+}
+
+
+.options-container {
+  display: flex;
+  width: 342px;
+  height: 62px;
+  align-items: center;
+  background: #afafaf;
+  /* Container background */
+  border-radius: 32px;
+  justify-content: center;
+  margin-bottom: 12px;
+  /* Combined this and next two lines */
+  cursor: pointer;
+  color: #0e0e0e;
+  margin: auto;
+  margin-top: 24px;
+  padding: 5px;
+}
+
+.monthly,
+.quarterly {
+  display: flex;
+  height: 52px;
+  padding: 0 41px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  width: 50%;
+  transition: background-color 0.3s;
+  /* Smooth transition for hover and active states */
+}
+
+/* Style for .active state */
+.active {
+  background: rgb(255, 255, 255);
+  /* Active option background */
+  color: #0e0e0e;
+}
+
+.subscriptions-period {
+  font-size: 12px;
+  font-weight: 300;
+  margin-left: -6px;
+  color: #c9c9c9;
+}
+
+/* Hover effect for when non-active */
+.monthly:not(.active):hover,
+.quarterly:not(.active):hover {
+  background-color: rgba(132, 132, 132, 1);
+  /* Dark grey on hover for non-active */
+}
+
+/* ------------- Pricing Cards ---------------*/
+
+.pricing-card {
+  position: relative;
+  background: #202020;
+  height: 672px;
+  width: 392px;
+  border: 1px solid transparent;
+  border-radius: 38px;
+  margin: auto;
+  margin-bottom: 24px;
+  color: white;
+  padding: 64px;
+  text-align: left;
+}
+
+.get-started {
+  display: flex;
+  width: 264px;
+  padding: 16px 53px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 32px;
+  background: #897ae6;
+  border: none;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 46px;
+}
+
+.get-started:hover {
+  cursor: pointer;
+}
+
+.pricing-card-title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.subscriptions-subheader {
+  font-size: 12px;
+  color: #ffffff;
+  margin-bottom: 42px;
+  font-weight: 300;
+  font-family: "Poppins";
+}
+
+.subscription-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  width: 264px;
+}
+
+.price {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  width: 264px;
+}
+
+.subscription-length {
+  color: #a9a9a9;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 6px;
+}
+
+.best-value {
+  display: flex;
+  position: absolute;
+  top: 18px;
+  width: 78px;
+  height: 24px;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 60%;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 0px 10px 0 10px;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  background-color: #8f37ff;
+  white-space: nowrap;
+}
+
+.per-month {
+  visibility: hidden;
+}
+
+.value {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  padding-bottom: 6px;
+}
+
+.overview-title {
+  display: flex;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 36px;
+  width: 135%;
+  border-bottom: 1px rgba(255, 255, 255, 0.12) solid;
+  font-family: "Poppins";
+}
+
+.overview-title-pricing {
+  border-bottom: 1px solid white;
+}
+
+.overview {
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 38px;
+  padding-left: 0px;
+}
+
+.cancel {
+  border-bottom: none;
+}
+
+.see-full {
+  display: flex;
+  width: 264px;
+  position: absolute;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  font-family: var(--font-family-poppins);
+  font-size: 12px;
+  cursor: pointer;
+  gap: 4px;
+  bottom: 64px;
+  font-family: "Poppins";
+}
+
+.pricing-components {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  margin: auto;
+  max-width: 1224px;
+  margin-top: 48px;
+}
+
+.we-are-card {
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.lets-chat-card {
+  position: absolute;
+  border-radius: 32px;
+  border: 2px solid #897ae6;
+  background-color: #202020;
+  bottom: 100px;
+}
+
+.section-subheader-pricing {
+  font-size: 24px;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.dapp-designers-logo-small {
+  height: 64px;
+  width: 72px;
+  margin: auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+/* --------------FAQ Section-------------- */
+.faq-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+  padding: 10%;
+  border-radius: 48px;
+  margin-bottom: 100px;
+
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 64px;
+  color: #897AE6;
+  margin-bottom: 64px;
+  margin-top: -64px;
+  letter-spacing: -1.8px;
+  font-weight: 500;
+}
+
+.faq-border {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  border: 1px solid #CECECE;
+}
+
+.faq-question {
+  font-size: 32px;
+}
+
+.faq-content-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: 32px;
+}
+
+.faq-content-header:hover {
+  cursor: pointer;
+}
+
+.faq-answer {
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 32px;
+  display: none;
+}
+
+.faq-answer.show {
+  display: block;
+}
+
+.faq-toggle {
+  transition: transform 0.3s ease;
+}
+
+.faq-toggle.rotate {
+  transform: rotate(180deg)
+}
+
+.circle-img {
+  position: relative;
+  width: 100%;
+  margin-top: 180px;
+  margin-bottom: 400px;
+}
+
+.dd-logo-round {
+  position: absolute;
+  right: 10%;
+  width: 12%;
+  height: auto;
+}
+
+/* -------------Everyone Section ---------------*/
+
+.section-header-everyone {
+  font-size: 165px;
+}
+
+.everyone-section {
+  background-color: #f4f4f4;
+
+}
+
+.section-header-everyone {
+  position: relative;
+  font-size: 9vw;
+  font-weight: 600;
+  top: -180px;
+}
+
+.everyone-section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.everyone-text {
+  display: flex;
+  font-weight: 200;
+  font-style: italic;
+  text-align: left;
+}
+
+.services-list {
+  list-style: none;
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 200;
+}
+
+/* ----------- Footer----------- */
+
+footer {
+  position: relative;
+  background-color: #131313;
+  color: white;
+  height: 80vh;
+  width: 100%;
+  padding: 7%;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  width: 50%;
+}
+
+.footer-brand {
+  font-size: 64px;
+  width: 335px;
+  margin-top: 12px;
+  letter-spacing: -1.8px;
+}
+
+.dd-logo-small {
+  width: 76px;
+  height: 68px;
+  margin-bottom: 18px;
+}
+
+.locations {
+  display: flex;
+  flex-direction: row;
+}
+
+.share-email {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  width: 240px;
+  right: 10%;
+  top: 22%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.input-email {
+  box-sizing: border-box;
+  border: none;
+  height: 62px;
+  width: 30vw;
+  border-radius: 48px;
+  padding: 24px;
+  padding-right: 130px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+.contact-button {
+  position: absolute;
+  height: 52px;
+  width: 48%;
+  background-color: #202020;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  right: -131px;
+  justify-content: flex-end;
+  right: 8px;
+}
+
+.contact-button:hover {
+  cursor: pointer;
+}
+
+.locations {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 140px;
+  text-transform: uppercase;
+}
+
+
+@media screen and (max-width:1466px) {
+  .top-choice-title {
+    font-size: 4vw;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:1400px) {
+  .feedback {
+    width: 130%;
+    max-width: 130%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .btn {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .pricing-components {
+    gap: 0px;
+    width: 100%;
+  }
+
+  .pricing-card {
+    padding: 40px;
+    height: 638px;
+    width: 348px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .faq-title {
+    font-size: 48px
+  }
+
+  .faq-toggle {
+    margin-left: 24px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 1200px) {
+  .clients-section {
+    height: 172px;
+  }
+
+  .previous-client {
+    height: 56px;
+  }
+
+  .accessible-content-title {
+    font-size: 32px;
+  }
+
+  .accessible-content-subtext {
+    font-size: 18px;
+  }
+
+
+  .mobile-phones-experience {
+    width: 46vw;
+    height: auto;
+    max-height: 75%;
+    z-index: 3;
+  }
+
+  .mgd-phones {
+    position: relative;
+
+  }
+
+  .mobile-backdrop {
+    height: 837px;
+    width: 837px;
+    z-index: 0;
+    position: relative;
+    right: 113px;
+    bottom: -132px;
+  }
+
+  .top-choice-content {
+    height: 34%;
+    border-radius: 42px;
+    padding: 60px 48px;
+  }
+
+  #founders-img {
+    margin-top: 172px;
+  }
+
+  .pricing-components {
+    gap: 0px;
+    width: 100%;
+  }
+
+  .page-section {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1150px) {
+
+  .top-choice-content {
+    display: flex;
+    flex-direction: column;
+    height: 81vh;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .founder-border {
+    display: none;
+  }
+
+  .top-choice-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .top-choice-subheader {
+    font-size: 18px;
+  }
+
+  .learn-more-lets-chat {
+    width: 100%;
+  }
+
+  .learn-more-top-choice {
+    display: none;
+  }
+
+  .feedback-section {
+    width: 95%;
+    margin: auto;
+  }
+
+  .feedback {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    margin-top: -64px;
+  }
+
+  .feedback-founder {
+    justify-content: center;
+    margin-top: 48px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founder-company {
+    font-size: 20px;
+
+  }
+
+  #founders-img {
+    display: none;
+  }
+
+  img.feedback-img {
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-right: 0px;
+  }
+
+  .horizontal-border {
+    border: 1px solid white;
+    width: 40%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    margin-top: -12px;
+
+  }
+
+  .learn-more-lets-chat {
+    display: none;
+  }
+
+  .second-btn-choice {
+    display: flex;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  img.graphic-one,
+  img.graphic-two {
+    display: none;
+  }
+
+  .strategy-content {
+    width: 80%;
+    margin: auto;
+  }
+
+  .pricing-card {
+    padding: 18px;
+    padding-top: 18px;
+    height: 577px;
+    width: 306px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-top: 32px;
+  }
+
+  .get-started {
+    font-size: 18px;
+    margin-bottom: 36px
+  }
+
+  .see-full {
+    margin-bottom: -36px;
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+  nav {
+    font-size: 16px;
+  }
+
+  .nav-button {
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+  .hero-section {
+    height: 90vh;
+  }
+
+  h1.hero-title,
+  .product-title {
+    font-size: 72px;
+    line-height: 84px;
+    margin-bottom: 24px;
+  }
+
+  .outline-button {
+    margin-left: 2px
+  }
+
+  .accessible-content {
+    width: 85%;
+  }
+
+  .status-bar {
+    width: 80%;
+  }
+
+  .product-mobiles {
+    display: flex;
+    width: 80%;
+    height: auto;
+  }
+
+  .product-subheader {
+    font-size: 18px;
+  }
+
+  .accessible-title {
+    font-size: 64px;
+  }
+
+  .objects {
+    margin-top: -160px;
+  }
+
+  .faq-title {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .clients-section {
+    height: 168px;
+  }
+
+  .previous-client {
+    height: 42px;
+  }
+
+  .pricing-card {
+    position: relative;
+    background: #202020;
+    height: 672px;
+    width: 392px;
+    border: 1px solid transparent;
+    border-radius: 38px;
+    margin: auto;
+    margin-bottom: -10px;
+    color: white;
+    padding: 64px;
+    text-align: left;
+    ;
+  }
+
+  .get-started {
+    padding: 16px 53px;
+    font-size: 24px;
+    margin-bottom: 46px;
+  }
+
+  .get-started:hover {
+    cursor: pointer;
+  }
+
+  .mgd-phones {
+    position: relative;
+    display: flex;
+    right: 11%;
+  }
+
+  .mobile-phones-experience {
+    width: 52vw;
+  }
+
+  .subscription-section {
+    flex-direction: row;
+  }
+
+
+  .see-full {
+    display: flex;
+    width: 264px;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    font-family: var(--font-family-poppins);
+    font-size: 12px;
+    cursor: pointer;
+    gap: 4px;
+    bottom: 84px;
+    font-family: "Poppins";
+  }
+
+  .pricing-components {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    margin: auto;
+    max-width: 1224px;
+    margin-top: 48px;
+  }
+
+  .faq-title {
+    white-space: nowrap;
+    font-size: 36px;
+    margin-top: 1px;
+  }
+
+  .faq-question {
+    font-size: 24px;
+  }
+
+  .faq-border {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  .faq-answer {
+    margin-top: 18px;
+    font-size: 18px
+  }
+
+}
+
+@media screen and (max-width: 960px) {
+
+  .faq-title {
+    white-space: nowrap;
+    font-size: 5vw;
+    margin-top: 1px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .faq-question {
+    font-size: 20px;
+  }
+
+  .faq-border {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  .faq-answer {
+    margin-top: 18px;
+    font-size: 16px
+  }
+
+  .faq-toggle {
+    min-width: 24px;
+  }
+
+  .footer-brand {
+    font-size: 41px;
+    width: 189px;
+    margin-top: 12px;
+    letter-spacing: -1.8px;
+  }
+
+  .input-email {
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .contact-button {
+    height: 38px;
+    width: 42%;
+  }
+
+  .accessible-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+
+  .accessible-content-bullet {
+    width: 60%;
+  }
+
+  .accessible-logo {
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  .accessible-content-title {
+    margin-bottom: 0px;
+  }
+
+}
+
+
+@media screen and (max-width:860px) {
+  .dapp-designers-header {
+    display: none;
+  }
+
+  h1.hero-title,
+  .product-title {
+    font-size: 64px;
+    line-height: 73px;
+    margin-bottom: 24px;
+  }
+
+  .black-button,
+  .outline-button {
+    height: 54px;
+    margin-right: 0px;
+    font-size: 18px;
+  }
+
+  .accessible-button {
+    margin: auto;
+    margin-top: 72px;
+  }
+
+  .mgd-phones {
+    right: 40%;
+  }
+
+  .clients-section {
+    height: 132px;
+  }
+
+  .previous-client {
+    height: 32px;
+  }
+
+  .payment-mobile,
+  .accept-mobile {
+    display: none;
+  }
+
+
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+
+  .experience-title {
+    width: 84vw
+  }
+
+  .mgd-phones {
+    right: 86%;
+  }
+
+  .mobile-phones-experience {
+    width: 60vw;
+  }
+
+  .user-experience-section {
+    height: 142vh;
+  }
+
+  .mobile-backdrop {
+    right: 170px;
+    bottom: -427px;
+    overflow-x: hidden;
+  }
+
+  .chat-learn-more {
+    display: none;
+  }
+
+  .ux-learn-more {
+    width: 100%;
+  }
+
+  .section-header-experience {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .strategy-border {
+    bottom: 114px;
+    right: 114px;
+    height: 248px;
+  }
+
+  .objects {
+    margin-top: -188px;
+  }
+
+  .section-subheader-strategy {
+    font-size: 18px;
+    margin-left: 24px;
+  }
+
+  .strategy-bullet-header {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .strategy-bullet-subheader {
+    font-size: 16px;
+  }
+
+  .discover-logo,
+  .creative-logo,
+  .delivery-logo {
+    width: 24px;
+  }
+
+  .strategy-bullet-subheader {
+    margin-left: -16px;
+  }
+
+  .strategy-content {
+    width: 90%;
+  }
+
+  .section-header-pricing {
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: 62px;
+    margin-bottom: 12px;
+  }
+
+  .section-subheader-pricing {
+    font-size: 18px;
+  }
+
+  .product-mobile-phone {
+    width: 90%;
+  }
+
+  .options-container {
+    height: 50px;
+    width: 253px;
+  }
+
+  .monthly,
+  .quarterly {
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .dapp-designers-logo-small {
+    margin-top: 112px;
+    margin-bottom: 112px;
+  }
+
+  .faq-section {
+    margin-bottom: -70px;
+  }
+
+  .circle-img {
+    margin-bottom: 320px;
+  }
+
+  .dd-logo-round {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+
+  h1.hero-title,
+  .product-title {
+    font-size: 52px;
+    line-height: 58px;
+  }
+
+  .feedback-section {
+    width: 100%;
+  }
+
+  .feedback {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .product-button {
+    width: 90%;
+  }
+
+  .top-choice-title {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .top-choice-subheader {
+    font-size: 14px;
+  }
+
+  .strategy-border {
+    bottom: 65px;
+    right: 65px;
+    height: 150px;
+  }
+
+  .objects {
+    margin-top: -106px;
+  }
+
+  .input-email,
+  .contact-button {
+    font-size: 12px;
+  }
+
+  .contact-button {
+    width: 30%;
+  }
+
+  .dd-logo-small {
+    width: 62px;
+    height: 52px;
+    margin-bottom: 15px;
+  }
+
+  .accessible-title {
+    font-size: 50px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .accessible-button {
+    margin-top: 72px;
+    margin-bottom: -42px;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .nav-logo {
+    margin-left: 24px;
+  }
+
+  .logo {
+    width: 42px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .mgd-phones {
+    right: 109%;
+  }
+
+  .mobile-phones-experience {
+    width: 99vw;
+  }
+
+  .product-subheader {
+    font-size: 14px;
+  }
+
+  .user-experience-section {
+    height: 142vh;
+  }
+
+  .mobile-backdrop {
+    right: 103px;
+    bottom: -427px;
+  }
+
+  .faq-question {
+    font-size: 14px;
+  }
+
+  .faq-answer {
+    font-size: 12px;
+  }
+
+  .services-list {
+    font-size: 24px;
+  }
+
+  .clients-section {
+    height: 100px;
+  }
+
+  .previous-client {
+    height: 24px;
+  }
+
+  .accessible-title {
+    margin-top: -80px;
+  }
+
+  .accessible-content-subtext {
+    margin-bottom: 24px;
+  }
+
+  .black-button,
+  .outline-button {
+    padding: 14.5px 43.5px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .hero-image-container {
+    width: 200vw;
+    top: -12%;
+    left: -33%;
+  }
+
+  .name-it-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 17vw;
+    text-align: left;
+    white-space: nowrap;
+    margin-left: -4%;
+    z-index: 1;
+    margin-top: 75%;
+    line-height: 105%;
+    justify-content: flex-start;
+    height: 50vh;
+  }
+
+  .faded-logo {
+    position: absolute;
+    text-align: right;
+    overflow-x: hidden;
+    z-index: 1;
+    height: 101vh;
+    width: 57vw;
+    right: -2px;
+    bottom: 0;
+  }
+
+  .deliver-title {
+    position: absolute;
+    margin-left: -2%;
+    font-size: 4vw;
+    margin-top: -76px;
+  }
+
+  .user-experience-section {
+    height: 118vh;
+  }
+
+  .strategy-border {
+    bottom: 39px;
+    right: 39px;
+    height: 95px;
+  }
+
+  .section-header-strategy {
+    font-size: 9vw;
+  }
+
+  .section-subheader-strategy {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+
+  .objects {
+    margin-top: -62px;
+  }
+
+  .section-header-pricing {
+    font-size: 36px;
+  }
+
+  .section-subheader-pricing {
+    font-size: 14px;
+  }
+
+  .footer-brand {
+    font-size: 24px;
+    width: 109px;
+    margin-top: 12px;
+    letter-spacing: -1.4px;
+  }
+
+  .dapp-designers-footer {
+    font-size: 12px;
+  }
+
+  .input-email {
+    width: 44vw;
+  }
+}
+
+@media screen and (max-width: 460px) {
+
+  h1.hero-title,
+  .product-title {
+    font-size: 46px;
+    line-height: 52px;
+  }
+
+  .black-button,
+  .outline-button {
+    padding: 14.5px 33.5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .user-experience-section {
+    height: 105vh;
+  }
+}
+
+@media screen and (max-width: 388px) {
+
+  h1.hero-title,
+  .product-title {
+    font-size: 42px;
+    line-height: 46px;
+  }
+
+  .black-button,
+  .outline-button {
+    padding: 14.5px 28.5px;
+  }
+}
