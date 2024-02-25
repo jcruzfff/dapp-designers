@@ -57,6 +57,7 @@ nav {
   font-family: "Poppins";
 }
 
+
 /* .gallery {
   display: flex;
   gap: 1rem;
@@ -1423,7 +1424,7 @@ footer {
     z-index: 0;
     position: relative;
     right: 113px;
-    bottom: -132px;
+    bottom: 0px;
   }
 
   .top-choice-content {
@@ -1606,7 +1607,7 @@ footer {
 
   .product-mobiles {
     display: flex;
-    width: 80%;
+    width: 100%;
     height: auto;
   }
 
@@ -1836,8 +1837,6 @@ footer {
   .accept-mobile {
     display: none;
   }
-
-
 }
 
 
@@ -1845,26 +1844,21 @@ footer {
 
 @media screen and (max-width: 800px) {
 
+  .user-experience-section {
+    overflow: hidden;
+  }
+
   .experience-title {
-    width: 84vw
+    width: 50vw
   }
 
   .mgd-phones {
-    right: 86%;
-  }
-
-  .mobile-phones-experience {
-    width: 60vw;
-  }
-
-  .user-experience-section {
-    height: 142vh;
+    right: 40%;
   }
 
   .mobile-backdrop {
-    right: 170px;
-    bottom: -427px;
-    overflow-x: hidden;
+    right: 216px;
+    bottom: -163px;
   }
 
   .chat-learn-more {
@@ -1971,6 +1965,7 @@ footer {
     text-shadow: none;
     letter-spacing: -1.8px;
   }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -1979,6 +1974,11 @@ footer {
   .product-title {
     font-size: 52px;
     line-height: 58px;
+  }
+
+  .dapp-designers-header {
+    display: flex;
+    font-size: 12px;
   }
 
   .black-button,
@@ -2046,16 +2046,30 @@ footer {
     width: 90%;
   }
 
+  nav {
+    margin-right: 24px;
+    font-size: 10px;
+  }
+
   .nav-button {
-    display: none;
+    margin-right: 10px;
+    color: #7c7a7a;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
   }
 
   .nav-logo {
     margin-left: 24px;
+    gap: 10px;
   }
 
   .logo {
     width: 42px;
+  }
+
+  .mobile-phones-experience {
+    width: 64vw;
   }
 
 }
@@ -2069,11 +2083,11 @@ footer {
   }
 
   .mgd-phones {
-    right: 109%;
+    right: 104%;
   }
 
   .mobile-phones-experience {
-    width: 99vw;
+    min-width: 90vw;
   }
 
   .product-subheader {
@@ -2089,9 +2103,8 @@ footer {
   }
 
   .mobile-backdrop {
-    right: 103px;
+    right: 151px;
     bottom: -427px;
-    position: sticky;
   }
 
   .faq-content-header {
@@ -2136,6 +2149,56 @@ footer {
     padding: 14.5px 43.5px;
   }
 
+  .experience-title {
+    width: 84vw;
+    padding-left: 0%;
+    padding-top: 7%;
+  }
+
+  .top-choice-section {
+    height: 100vh;
+  }
+
+  footer {
+    height: 60vh;
+  }
+
+  .input-email {
+    width: 39vw;
+    padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+
+  .user-experience-section {
+    height: 142vh;
+  }
+
+  .mobile-backdrop {
+    right: 151px;
+    bottom: -427px;
+  }
+
+  nav {
+    margin-right: 16px;
+
+  }
+
+  .nav-items {
+    margin-right: 8px;
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width:530px) {
+  .user-experience-section {
+    height: 130vh;
+  }
+
+  .dapp-designers-header {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -2179,12 +2242,9 @@ footer {
     bottom: 0;
   }
 
-  .clients-section {
-    padding-left: 9%;
-  }
 
   .previous-client {
-    margin-right: 14px;
+    height: 20px;
   }
 
   .accessible-section {
@@ -2204,10 +2264,6 @@ footer {
     margin: auto;
   }
 
-  .user-experience-section {
-    height: 118vh;
-  }
-
   .strategy-border {
     bottom: 39px;
     right: 39px;
@@ -2224,7 +2280,7 @@ footer {
   }
 
   .top-choice-content {
-    height: 109vh;
+    height: 75vh;
   }
 
   .objects {
@@ -2262,19 +2318,46 @@ footer {
   .outline-button {
     padding: 14.5px 24.5px;
   }
+
+  .locations {
+    font-size: 14px;
+  }
+
 }
 
 
 @media screen and (max-width: 450px) {
   .user-experience-section {
-    height: 105vh;
+    height: 108vh;
   }
-
 
   .pricing-card {
     width: 382px;
     padding: 48px;
     height: 635px;
+  }
+
+  .locations {
+    font-size: 12px;
+  }
+
+  .contact-btn {
+    margin-right: 0px;
+    display: none;
+  }
+
+  .nav-button {
+    margin-right: 6px;
+  }
+
+  nav {
+    margin-right: 6px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .user-experience-section {
+    height: 102vh;
   }
 }
 
@@ -2289,5 +2372,16 @@ footer {
   .black-button,
   .outline-button {
     padding: 14.5px 22.5px;
+  }
+
+  .previous-client {
+    height: 16px;
+  }
+
+}
+
+@media screen and (max-width: 342px) {
+  .user-experience-section {
+    height: 88vh;
   }
 }
