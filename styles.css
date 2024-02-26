@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .par {
   overflow-x: hidden;
 }
@@ -29,7 +33,6 @@ nav {
   justify-content: space-between;
   margin-top: 24px;
   align-items: center;
-  margin-right: 82px;
   font-size: 20px;
   color: #7c7a7a;
   font-family: "Poppins";
@@ -43,6 +46,11 @@ nav {
   align-items: center;
   gap: 12px;
   margin-left: 82px;
+}
+
+.nav-items {
+  position: absolute;
+  right: 24px;
 }
 
 .logo {
@@ -703,6 +711,7 @@ nav {
 }
 
 .product-mobiles {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -712,7 +721,8 @@ nav {
 }
 
 .product-mobile-phone {
-  width: 80%;
+  position: relative;
+  width: 30%;
   height: auto;
 }
 
@@ -1008,7 +1018,7 @@ nav {
 .pricing-card {
   position: relative;
   background: #202020;
-  height: 672px;
+  height: 582px;
   width: 392px;
   border: 1px solid transparent;
   border-radius: 38px;
@@ -1211,7 +1221,16 @@ nav {
   border-radius: 32px;
   border: 2px solid #897ae6;
   background-color: #202020;
-  bottom: 100px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  bottom: -70px;
+  --webkit-appearance: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .section-subheader-pricing {
@@ -1493,7 +1512,7 @@ footer {
 
   .pricing-card {
     padding: 40px;
-    height: 638px;
+    height: 582px;
     width: 348px;
     margin-left: 10px;
     margin-right: 10px;
@@ -1689,7 +1708,7 @@ footer {
   .pricing-card {
     padding: 18px;
     padding-top: 18px;
-    height: 577px;
+    height: 582px;
     width: 306px;
     margin-left: 8px;
     margin-right: 8px;
@@ -1798,7 +1817,7 @@ footer {
   .pricing-card {
     position: relative;
     background: #202020;
-    height: 672px;
+    height: 582px;
     width: 392px;
     border: 1px solid transparent;
     border-radius: 38px;
@@ -2410,8 +2429,7 @@ footer {
   }
 
   nav {
-    margin-right: 16px;
-
+    margin-right: 24px;
   }
 
   .nav-items {
@@ -2608,7 +2626,7 @@ footer {
   .pricing-card {
     width: 382px;
     padding: 48px;
-    height: 635px;
+    height: 582px;
   }
 
   .locations {
@@ -2621,10 +2639,6 @@ footer {
   }
 
   .nav-button {
-    margin-right: 6px;
-  }
-
-  nav {
     margin-right: 6px;
   }
 
@@ -2696,6 +2710,90 @@ footer {
     padding-left: 38px;
   }
 
+  .we-are-card {
+    font-size: 22px;
+  }
+
+}
+
+/* .toggle-menu {
+  position: relative;
+}
+
+.hamburger-button {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu__inactive {
+  display: none;
+}
+
+.hamburger-menu__active {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100px;
+  background: rgb(255, 255, 255);
+  height: 100px;
+  color: black;
+  font-size: 24px;
+
+}
+
+@media screen and (max-width: 700px) {
+  .hamburger-button {
+    display: block;
+    position: relative;
+  }
+
+  .nav-items {
+    display: none;
+  }
+} */
+
+.toggle-menu {
+  position: relative;
+  /* Contains both the button and the menu */
+}
+
+.hamburger-button {
+  display: none;
+}
+
+.hamburger-menu__inactive {
+  display: none;
+}
+
+.hamburger-menu__active {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: red;
+  position: absolute;
+  top: 100%;
+  /* Adjust if necessary */
+  right: 0;
+  /* Aligns the menu to the right side */
+  width: 300px;
+  /* Adjust based on your design */
+  color: black;
+  font-size: 16px;
+  z-index: 9;
+  /* Keep above other content but below the button */
+}
+
+@media screen and (max-width: 700px) {
+
+  .hamburger-button,
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-items {
+    display: none;
+
+  }
 }
 
 @media screen and (max-width: 342px) {
