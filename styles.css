@@ -601,6 +601,13 @@ nav {
   cursor: pointer;
 }
 
+#chat-learn-more {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
 .strategy-button {
   margin-right: 12px;
   padding: 16.5px 53.5px;
@@ -745,7 +752,7 @@ nav {
 
 .top-choice-content {
   background-color: #202020;
-  height: 36%;
+  height: 40%;
   width: 75%;
   margin: auto;
   border-radius: 58px;
@@ -2436,16 +2443,16 @@ footer {
   }
 
   footer {
-    height: 80vh;
-    padding-top: 10%;
+    height: 76vh;
+    padding-top: 14%;
   }
 
   .footer-brand {
-    font-size: 65px;
-    width: 306px;
+    font-size: 58px;
+    width: 300px;
     margin-top: 12px;
     letter-spacing: -1.8px;
-    line-height: 72px;
+    line-height: 61px;
   }
 
   .share-email {
@@ -2611,7 +2618,7 @@ footer {
   }
 
   .footer-brand {
-    width: 355px;
+    width: 300px;
     margin-top: 12px;
     letter-spacing: -1.4px;
   }
