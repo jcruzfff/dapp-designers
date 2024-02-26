@@ -289,6 +289,8 @@ nav {
   height: auto;
   z-index: 10;
   transition: transform 0.5s ease;
+  will-change: transform;
+  /* Optimizes animations */
 }
 
 

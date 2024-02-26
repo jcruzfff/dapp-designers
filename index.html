@@ -1042,14 +1042,33 @@
 
       });
 
-      document.addEventListener('scroll', function () {
-        const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        const maxShiftPercentage = 55; // Maximum shift to the left as a percentage of the current position
+      let lastKnownScrollPosition = 0;
+      let ticking = false;
+
+      function doSomething(scrollPos) {
+        // Calculate the transform based on the scroll position
+        const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
+        const maxShiftPercentage = 40; // Maximum shift to the left as a percentage
         const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
+
+        // Apply the shift using CSS transform
         const heroImage = document.querySelector('.hero-image-container');
-        // Apply the shift using CSS transform for better performance
         heroImage.style.transform = `translateX(-${shiftAmount}%)`;
+      }
+
+      document.addEventListener('scroll', function (e) {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            doSomething(lastKnownScrollPosition);
+            ticking = false;
+          });
+
+          ticking = true;
+        }
       });
+
 
     </script>
 
