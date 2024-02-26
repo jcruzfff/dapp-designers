@@ -1051,31 +1051,33 @@
 
       // Scrolling the hero to the left
 
-      let lastKnownScrollPosition = 0;
-      let ticking = false;
-
-      function doSomething(scrollPos) {
-        // Calculate the transform based on the scroll position
-        const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
-        const maxShiftPercentage = 180; // Maximum shift to the left as a percentage
-        const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
-
-        // Apply the shift using CSS transform
+      document.addEventListener('DOMContentLoaded', () => {
+        let lastKnownScrollPosition = 0;
+        let ticking = false;
         const heroImage = document.querySelector('.hero-image-container');
-        heroImage.style.transform = `translateX(-${shiftAmount}%)`;
-      }
 
-      document.addEventListener('scroll', function (e) {
-        lastKnownScrollPosition = window.scrollY;
-
-        if (!ticking) {
-          window.requestAnimationFrame(function () {
-            doSomething(lastKnownScrollPosition);
-            ticking = false;
-          });
-
-          ticking = true;
+        function doSomething(scrollPos) {
+          if (window.innerWidth > 600) {
+            // Your existing logic for desktop
+            const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
+            const maxShiftPercentage = 180; // Maximum shift to the left as a percentage
+            const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
+            heroImage.style.transform = `translateX(-${shiftAmount}%)`;
+          }
         }
+
+        document.addEventListener('scroll', function (e) {
+          lastKnownScrollPosition = window.scrollY;
+
+          if (!ticking && window.innerWidth > 600) {
+            window.requestAnimationFrame(function () {
+              doSomething(lastKnownScrollPosition);
+              ticking = false;
+            });
+
+            ticking = true;
+          }
+        });
       });
 
       // This brings in the accessible section

@@ -3139,3 +3139,26 @@ a {
   animation: bouncyScale 0.8s forwards ease-out;
   /* Apply the animation: name, duration, fill mode, timing function */
 }
+
+/* Add this at the end of your CSS file */
+@media screen and (max-width: 600px) {
+  .hero-image-container {
+    /* Ensure the initial position is set */
+    transform: translateX(0);
+    /* Animation for moving back and forth */
+    animation: floatLeftRight 40s linear infinite;
+  }
+
+  /* Keyframes for the animation */
+  @keyframes floatLeftRight {
+
+    0%,
+    100% {
+      transform: translateX(0%);
+    }
+
+    50% {
+      transform: translateX(-56%);
+    }
+  }
+}
