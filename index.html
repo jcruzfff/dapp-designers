@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./images/tab-icon.png">
 </head>
 
 <body>
@@ -101,7 +102,7 @@
 
 
     <div class="name-it-section" id="web3-section">
-      <div class="hero-image"> <img src="./images/hero-image.png" alt="dapp-design" class="hero-image-container" />
+      <div class="hero-image"> <img src="./images/new-hero-image.png" alt="dapp-design" class="hero-image-container" />
       </div>
       <div>
         <div class="name-it-title">
@@ -141,7 +142,7 @@
     <img src="./images/jutsu-logo.svg" alt="jutsu-logo" class="previous-client" />
     <img src="./images/deepai-logo.svg" alt="deep-ai-logo" class="previous-client" />
     <img src="./images/graphid-logo.svg" alt="graph-id-logo" class="previous-client" />
-    <img src="./images/mgd-logo.svg" alt="mint-gold-dust-logo" class="previous-client" />
+    <img src="./images/mgd-logo.png" alt="mint-gold-dust-logo" class="previous-client" />
     <img src="./images/softserve-logo.svg" alt="softserve-logo" class="previous-client" />
   </div>
 
@@ -201,12 +202,12 @@
       </div>
     </div>
     <div class="mgd-phones">
-      <img src="./images/mobile-phones.svg" alt="user-experience" class="mobile-phones-experience" />
+      <img src="./images/mobile-phones-min.png" alt="user-experience" class="mobile-phones-experience" />
       <div class="mobile-backdrop"></div>
     </div>
 
     <div class="page-section">
-      <p class="page-number">04<span class="future">Your Future</span></p>
+      <p class="page-number">01<span class="future">Your Future</span></p>
       <svg xmlns="http://www.w3.org/2000/svg" width="2" height="563" viewBox="0 0 2 563" fill="none"
         class="border-experience">
         <path d="M1 563L1.00002 -1.85966e-05" stroke="white" stroke-width="2" />
@@ -276,7 +277,7 @@
         </div>
       </div>
       <div class="bottom-founders"></div>
-      <img src="./images/halfcircle-3d.svg" alt="3d-object" id="founders-img" />
+      <img src="./images/half-circle-3d.png" alt="3d-object" id="founders-img" />
       <div class="horizontal-border"></div>
     </div>
 
@@ -294,7 +295,7 @@
       <p class="section-subheader-strategy">From Beginning to End.</p>
     </div>
     <div class="objects">
-      <img src="./images/Donut Square.svg" alt="solution-circle" class="graphic-one" />
+      <img src="./images/Donut Square.png" alt="solution-circle" class="graphic-one" />
       <div class="strategy-content">
         <div class="strategy-bullet">
           <div class="strategy-bullet-header">
@@ -328,7 +329,7 @@
           </svg>
         </button>
       </div>
-      <img src="./images/Donut Round.svg" alt="solution-circle" class="graphic-two" />
+      <img src="./images/Donut Round.png" alt="solution-circle" class="graphic-two" />
     </div>
   </div>
 
@@ -549,9 +550,6 @@
                 Chat</button>
             </a>
           </div>
-
-
-
         </div>
       </div>
     </div>
@@ -730,11 +728,18 @@
     <div class="everyone-section">
       <div class="section-header-everyone">
         We design products <span class="everyone-text">for everyone.</span>
+        <button class="btn learn-more learn-more-top-choice" id="everyone-button" onclick="scrollToPricing()">
+          Get Started<svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
+            <path
+              d="M25.2071 8.70711C25.5976 8.31658 25.5976 7.68342 25.2071 7.29289L18.8431 0.928932C18.4526 0.538408 17.8195 0.538408 17.4289 0.928932C17.0384 1.31946 17.0384 1.95262 17.4289 2.34315L23.0858 8L17.4289 13.6569C17.0384 14.0474 17.0384 14.6805 17.4289 15.0711C17.8195 15.4616 18.4526 15.4616 18.8431 15.0711L25.2071 8.70711ZM24.5 7L0.5 7V9L24.5 9V7Z"
+              fill="white" />
+          </svg>
+        </button>
       </div>
       <div class="background-everyone">
         <img src="" alt="" class="everyone-img" />
       </div>
-      <ul class="services-list">
+      <!-- <ul class="services-list">
         <li>Our Team Includes:</li>
         <li>Social Media Consultants</li>
         <li>E-Commererce Specialists</li>
@@ -769,7 +774,7 @@
         <li>Artist</li>
         <li>You</li>
         <li>Us</li>
-      </ul>
+      </ul> -->
     </div>
 
     <footer>
@@ -803,8 +808,11 @@
     <img src="./images/dd-logo-footer.svg" alt="" class="dd-logo-footer" />
 
 
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+      // Faqs open
+
+      document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.faq-content-header').forEach(function (header) {
           header.addEventListener('click', function () {
             // Assuming the .faq-answer is a sibling of the clicked header's parent
@@ -814,22 +822,18 @@
             if (answer.classList.contains('show')) {
               answer.classList.remove('show');
               svg.classList.remove('rotate'); // Reverse the rotation
+              this.classList.remove('active'); // Remove the purple color from the question
             } else {
               answer.classList.add('show');
               svg.classList.add('rotate'); // Apply the rotation
+              this.classList.add('active'); // Make the question text purple
             }
           });
         });
       });
 
-      document.querySelectorAll('.nav-button').forEach(button => {
-        button.addEventListener('click', function () {
-          const targetSection = document.querySelector(this.getAttribute('data-target'));
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
+
+      // Hamburger menu
 
 
       document.addEventListener('DOMContentLoaded', function () {
@@ -885,6 +889,8 @@
           alert("Please enter a message.");
         }
       }
+
+      // This function changes the pricing page
 
       document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('userMessage').value = ''; // Clear the input field
@@ -1043,13 +1049,15 @@
 
       });
 
+      // Scrolling the hero to the left
+
       let lastKnownScrollPosition = 0;
       let ticking = false;
 
       function doSomething(scrollPos) {
         // Calculate the transform based on the scroll position
         const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
-        const maxShiftPercentage = 40; // Maximum shift to the left as a percentage
+        const maxShiftPercentage = 180; // Maximum shift to the left as a percentage
         const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
 
         // Apply the shift using CSS transform
@@ -1070,6 +1078,176 @@
         }
       });
 
+      // This brings in the accessible section
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+            } else {
+              // Optional: Reset the class if you want the animation to occur every time
+              // the element scrolls into view. Remove this else block if you want
+              // the animation to only happen once.
+              entry.target.classList.remove('animate');
+            }
+          });
+        }, {
+          threshold: 0.3, // Adjust as needed
+        });
+
+        // Target elements for animation
+        const elementsToAnimate = document.querySelectorAll('.accessible-content-bullet, .status-bar, .accessible-button');
+        elementsToAnimate.forEach((element) => {
+          observer.observe(element);
+        });
+      });
+
+      // User Experience comes to life
+      document.addEventListener('DOMContentLoaded', function () {
+        let uxSectionEntered = false;
+
+        // General observer for .experience-title, .btns, and .mobile-phones-experience animations
+        const generalObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains('experience-title') || entry.target.classList.contains('btns')) {
+                // Apply slide in from left without delay
+                entry.target.style.animation = 'slideFromLeft 0.8s forwards';
+              } else if (entry.target.classList.contains('mobile-phones-experience')) {
+                // Apply slide in from bottom with delay if UX section has been entered
+                entry.target.style.animation = uxSectionEntered ? 'slideFromBottom 0.8s forwards 0.5s' : 'slideFromBottom 0.8s forwards';
+              }
+            }
+          });
+        }, { threshold: 0.1 });
+
+        // Observers to animate elements once UX section enters viewport to a significant degree (30%)
+        const uxSectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+              uxSectionEntered = true; // Mark the UX section as entered
+              // Trigger the slide down animation for .page-section
+              const pageSection = document.querySelector('.page-section');
+              pageSection.style.animation = 'slideDown 0.8s forwards';
+              // Optional: Comment out the next line if you want the animation to repeat on re-entry
+              uxSectionObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: [0.4] });
+
+        // Target elements for the general animations
+        const elementsToAnimate = document.querySelectorAll('.experience-title, .btns, .mobile-phones-experience');
+        elementsToAnimate.forEach(el => generalObserver.observe(el));
+
+        // Start observing the user experience section to manage the entry marking and trigger .page-section animation
+        uxSectionObserver.observe(document.querySelector('.user-experience-section'));
+      });
+
+      // This brings the product section into the viewport
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)'; // Moves the element to its original position
+              observer.unobserve(entry.target); // Optional: Stop observing the element after the animation
+            }
+          });
+        }, {
+          threshold: 0.1 // Trigger when 50% of the element is in view
+        });
+
+        // Observe all .product-mobile-phone elements
+        document.querySelectorAll('.product-mobile-phone').forEach(item => {
+          observer.observe(item);
+        });
+      });
+
+      // This makes the strategies pop in
+      document.addEventListener('DOMContentLoaded', () => {
+        let lastScrollY = window.scrollY;
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            // Check if scrolling down
+            const currentScrollY = window.scrollY;
+            if (entry.isIntersecting && currentScrollY > lastScrollY) {
+              // Remove the class first to reset animation state
+              entry.target.classList.remove('animate');
+
+              // Trigger reflow to effectively reset the animation
+              void entry.target.offsetWidth;
+
+              // Add the class back to trigger the animation
+              entry.target.classList.add('animate');
+            }
+            lastScrollY = currentScrollY; // Update last scroll position after handling each entry
+          });
+        }, {
+          threshold: [0.1]
+        });
+
+        // Target elements within the strategy section you wish to animate
+        const elementsToAnimate = document.querySelectorAll('.strategy-bullet-header img, .strategy-bullet-header, .strategy-bullet-subheader');
+        elementsToAnimate.forEach(element => {
+          observer.observe(element);
+        });
+      });
+
+      // Spin animation
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const logo = entry.target;
+            if (entry.isIntersecting) {
+              // Directly manipulating the style to restart the animation
+              logo.style.animation = 'none'; // Reset animation
+              requestAnimationFrame(() => {
+                // Force a reflow to ensure the reset fully applies
+                logo.offsetHeight; // Reading offsetHeight forces a reflow
+                // Restart the animation
+                logo.style.animation = 'spinScale 0.5s ease-in-out forwards';
+              });
+            }
+          });
+        }, {
+          threshold: 0.1 // Adjust this value based on when you want the animation to trigger
+        });
+
+        // Start observing the logo
+        const logo = document.querySelector('.dapp-designers-logo-small');
+        observer.observe(logo);
+      });
+
+      // Bounce animation
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const logo = entry.target;
+            if (entry.isIntersecting) {
+              logo.classList.add('animate');
+            } else {
+              // Ensure the animate class is removed when not in view
+              logo.classList.remove('animate');
+            }
+          });
+        }, {
+          threshold: 0.5 // Adjust according to the desired trigger point
+        });
+
+        // Start observing the image element
+        const logoImage = document.querySelector('.circle-img .dd-logo-round');
+        observer.observe(logoImage);
+
+        // Re-apply animation by listening to when it ends
+        logoImage.addEventListener('animationend', () => {
+          // This ensures the animation can re-trigger by removing 'animate' class
+          logoImage.classList.remove('animate');
+          // Optionally, force a reflow to ensure CSS recognizes the re-addition of 'animate' class in future
+          void logoImage.offsetWidth;
+        });
+      });
 
     </script>
 

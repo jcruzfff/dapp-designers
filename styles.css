@@ -285,7 +285,7 @@ nav {
   position: absolute;
   top: -30%;
   left: -10%;
-  width: 119vw;
+  width: 200vw;
   height: auto;
   z-index: 10;
   transition: transform 0.5s ease;
@@ -733,7 +733,15 @@ nav {
   position: relative;
   width: 30%;
   height: auto;
+  transform: translateY(20vh);
+  /* Moves the phones below their normal position */
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  /* Animates the move and fade-in */
 }
+
+
+
 
 /* ----------------------- Top-Choice Section -------------------------*/
 
@@ -1335,7 +1343,7 @@ a {
 .dd-logo-round {
   position: absolute;
   right: 10%;
-  width: 12%;
+  width: 15%;
   height: auto;
 }
 
@@ -1350,14 +1358,15 @@ a {
   background-size: cover;
   background-color: #ffffff;
   padding-bottom: 48px;
-
+  height: 60vh;
 }
 
 .section-header-everyone {
   position: relative;
   font-size: 9vw;
   font-weight: 600;
-  top: -180px;
+  top: -224px;
+  margin-bottom: 24px;
 }
 
 .everyone-section {
@@ -1374,6 +1383,13 @@ a {
   font-weight: 200;
   font-style: italic;
   text-align: left;
+}
+
+#everyone-button {
+  background-color: #171717;
+  color: white;
+  border: none;
+  margin-top: 24px;
 }
 
 .services-list {
@@ -1739,6 +1755,18 @@ footer {
   .strategy-button {
     width: 100%;
   }
+
+  .circle-img {
+    margin-top: 100px;
+  }
+
+  .dd-logo-round {
+    width: 20%;
+  }
+
+  #everyone-button {
+    display: flex;
+  }
 }
 
 
@@ -1988,7 +2016,14 @@ footer {
     display: none;
   }
 
+
+  .circle-img {
+    margin-top: 80px;
+    margin-bottom: 340px;
+  }
 }
+
+
 
 /* @media screen and (max-width:900) {
   .accessible-title {
@@ -2157,10 +2192,11 @@ footer {
 
   .circle-img {
     margin-bottom: 320px;
+    margin-top: 200px;
   }
 
   .dd-logo-round {
-    width: 120px;
+    width: 25%;
   }
 
   .product-mobile-phone {
@@ -2215,6 +2251,12 @@ footer {
 
   .hero-subheader {
     width: 77%;
+  }
+
+  .hero-image-container {
+    width: 261vw;
+    top: -38%;
+    left: -50%;
   }
 
   .dapp-designers-header {
@@ -2495,11 +2537,12 @@ footer {
   }
 
   .circle-img {
-    margin-bottom: 193px;
+    margin-bottom: 169px;
+    margin-top: 135px;
   }
 
   .section-header-everyone {
-    top: -47px;
+    top: -97px;
   }
 
   .hero-section {
@@ -2510,10 +2553,10 @@ footer {
     width: 70vw;
   }
 
-  .section-header-everyone {
-    top: -57px;
-    letter-spacing: -1.3px;
+  .everyone-section {
+    height: 40vh;
   }
+
 
 
 }
@@ -2527,9 +2570,9 @@ footer {
   }
 
   .hero-image-container {
-    width: 291vw;
-    top: -18%;
-    left: -50%;
+    width: 440vw;
+    top: -11%;
+    left: -56%;
   }
 
   .hero-section {
@@ -2598,7 +2641,7 @@ footer {
   }
 
   .top-choice-content {
-    height: 85vh;
+    height: 105vh;
   }
 
   .objects {
@@ -2705,7 +2748,11 @@ footer {
   }
 
   .section-header-everyone {
-    top: -49px;
+    letter-spacing: -1.3px;
+  }
+
+  .dd-logo-round {
+    width: 30%;
   }
 }
 
@@ -2714,9 +2761,7 @@ footer {
     height: 102vh;
   }
 
-  .section-header-everyone {
-    top: -44px;
-  }
+
 
   .top-choice-title {
     font-size: 24px;
@@ -2826,7 +2871,270 @@ a {
   }
 }
 
+
+/* -------Animations Below--------- */
+
+/* Accessible section */
+
+.accessible-content-bullet,
+.status-bar,
+.accessible-button {
+  opacity: 0;
+  transform: translateY(30px);
+  /* Start slightly off-screen for a "rise" effect */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Smooth transition */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .no-underline {
   text-decoration: none;
   padding: 0px;
+}
+
+.strategy-bullet-header,
+.strategy-bullet-subheader {
+  opacity: 0;
+  transform: translateY(20px);
+  /* Start slightly off-screen */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Smooth transition */
+}
+
+.accessible-content-bullet.animate,
+.status-bar.animate,
+.accessible-button.animate {
+  animation: fadeIn 0.8s forwards;
+  /* Use the defined fadeIn animation */
+}
+
+
+/* User-experience Section */
+/* Initial State */
+.experience-title,
+.btns,
+.mobile-phones-experience,
+.page-section {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.experience-title,
+.btns {
+  transform: translateX(-30px);
+  /* Initial state off-screen left */
+}
+
+.mobile-phones-experience {
+  transform: translateY(30px);
+  /* Initial state off-screen bottom */
+}
+
+/* Adjust initial state for .page-section to be completely off-screen */
+.page-section {
+  /* Initial position adjustment */
+  transform: translateY(-100vh);
+  /* This ensures it's totally off-screen */
+  opacity: 1;
+  /* Keep it fully opaque; we're not fading it in/out */
+  transition: transform 0.8s ease-out;
+  /* Transition only the transform property */
+}
+
+/* Add a delay for the .mobile-phones-experience animation */
+.mobile-phones-experience {
+  animation-delay: 0.5s;
+  /* Delay the start of the animation */
+}
+
+@media screen and (max-width: 500px) {
+  .mobile-phones-experience {
+    animation-delay: 0.1s;
+    /* Delay the start of the animation */
+  }
+}
+
+/* Keyframes for animation */
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Since .page-section only slides down without fading, no need for opacity changes in keyframes */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100vh);
+    /* Starts off-screen */
+  }
+
+  to {
+    transform: translateY(0);
+    /* Ends at its natural position */
+  }
+}
+
+
+
+/* Stragtegy Section */
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.strategy-bullet-header img.animate {
+  animation: pop 0.8s forwards;
+}
+
+.strategy-bullet-header.animate,
+.strategy-bullet-subheader.animate {
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Faqs Section */
+
+/* Add this CSS class for making the text purple */
+.faq-content-header.active {
+  color: #897AE6;
+  /* Adjust the color based on your design */
+  background-color: #f4f4f4;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.faq-answer.show {
+  opacity: 1;
+  max-height: 500px;
+  /* Adjust max-height according to your content's needs */
+  animation: fadeInDown 0.5s ease-out;
+}
+
+@keyframes spinScale {
+
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: rotate(450deg) scale(2);
+    opacity: 1;
+  }
+}
+
+.dapp-designers-logo-small {
+  display: inline-block;
+  /* Ensures transform applies correctly */
+  transform: rotate(0deg) scale(1);
+  /* Initial state */
+  will-change: transform, opacity;
+  /* Hints the browser for performance optimization */
+}
+
+.dapp-designers-logo-small.spin-animation {
+  animation: spinScale 1s ease-in-out forwards;
+  /* Adjust duration to enhance smoothness */
+}
+
+/*  Bouncy Circle */
+
+@keyframes bouncyScale {
+  0% {
+    transform: scale(1);
+    /* Start at original size */
+  }
+
+  30% {
+    transform: scale(1.25);
+    /* Scale up */
+  }
+
+  40% {
+    transform: scale(0.85);
+    /* Scale down - smaller than original */
+  }
+
+  60% {
+    transform: scale(1.15);
+    /* Scale up a bit */
+  }
+
+  80% {
+    transform: scale(0.95);
+    /* Scale down a bit - closer to original */
+  }
+
+  100% {
+    transform: scale(1);
+    /* End at original size */
+  }
+}
+
+.circle-img .dd-logo-round {
+  display: inline-block;
+  will-change: transform;
+  animation: none;
+  /* Initial state without animation */
+}
+
+.circle-img .dd-logo-round.animate {
+  animation: bouncyScale 0.8s forwards ease-out;
+  /* Apply the animation: name, duration, fill mode, timing function */
 }
