@@ -46,12 +46,12 @@
               fill="black" />
           </svg></div>
         <div class="hamburger-menu" id="hamburger-menu">
-          <a href="#web3-section" id="#web3-section" class="">Web 3</a>
-          <a href="#uxui-section" id="#uxui-section" class="">UX/UI</a>
-          <a href="#portfolio-section" id="#portfolio-section" class="">Portfolio</a>
-          <a href="#services-section" id="#services-section" class="">Services</a>
-          <a href="#pricing-section" id="#pricing-section" class="">Pricing</a>
-          <a href="#contact-section" id="#contact-section" class="">Contact</a>
+          <a href="#web3-section" id="#web3-section" class="hamburger-item">Web 3</a>
+          <a href="#uxui-section" id="#uxui-section" class="hamburger-item">UX/UI</a>
+          <a href="#portfolio-section" id="#portfolio-section" class="hamburger-item">Portfolio</a>
+          <a href="#services-section" id="#services-section" class="hamburger-item">Services</a>
+          <a href="#pricing-section" id="#pricing-section" class="hamburger-item">Pricing</a>
+          <a href="#contact-section" id="#contact-section" class="hamburger-item">Contact</a>
         </div>
       </div>
     </nav>
@@ -250,7 +250,7 @@
           <a href="mailto:admin@dappdesigners.com?subject=Let's%20Chat&body=Hi%20there,%20I'm%20interested%20in%20chatting%20with%20you%20about%20my%20project%20idea."
             class="no-underline">
             <button class=" btn lets-chat first-btn-choice learn-more-lets-chat lets-chat-learn-more"
-              style="cursor: pointer;">Let's Chat</button>
+              style="cursor: pointer; height: 62px;">Let's Chat</button>
           </a>
           <button class="btn learn-more learn-more-top-choice" onclick="scrollToPricing()">
             Get Started<svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
@@ -1040,6 +1040,15 @@
           enterpriseButton.appendChild(newButton2)
         });
 
+      });
+
+      document.addEventListener('scroll', function () {
+        const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        const maxShiftPercentage = 55; // Maximum shift to the left as a percentage of the current position
+        const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
+        const heroImage = document.querySelector('.hero-image-container');
+        // Apply the shift using CSS transform for better performance
+        heroImage.style.transform = `translateX(-${shiftAmount}%)`;
       });
 
     </script>

@@ -288,7 +288,7 @@ nav {
   width: 119vw;
   height: auto;
   z-index: 10;
-  transition: position 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 
@@ -743,7 +743,7 @@ nav {
 
 .top-choice-content {
   background-color: #202020;
-  height: 40%;
+  height: 36%;
   width: 75%;
   margin: auto;
   border-radius: 58px;
@@ -772,6 +772,7 @@ nav {
   gap: -12px;
   margin-bottom: 0px;
   text-decoration: none;
+  align-items: center;
 }
 
 .feedback-section {
@@ -1435,7 +1436,7 @@ footer {
   box-sizing: border-box;
   border: none;
   height: 62px;
-  width: 30vw;
+  width: 37vw;
   border-radius: 48px;
   padding: 24px;
   padding-right: 130px;
@@ -1693,6 +1694,7 @@ footer {
 
   .no-underline {
     text-decoration: none;
+    padding: 0px;
   }
 
   img.graphic-one,
@@ -2185,7 +2187,7 @@ footer {
   }
 
   .locations {
-    margin-top: 93px;
+    margin-top: 200px;
   }
 
 }
@@ -2312,6 +2314,30 @@ footer {
     width: 64vw;
   }
 
+  .input-email {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    padding-left: 32px;
+    right: 0px;
+    width: 93%;
+    height: 62px;
+    font-size: 24px;
+  }
+
+  .share-email {
+    top: 57%;
+    right: 0px;
+    width: 93%;
+  }
+
+  .contact-button {
+    right: 8%;
+    font-size: 24px;
+    height: 52px;
+    border-radius: 24px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -2408,13 +2434,25 @@ footer {
   }
 
   footer {
-    height: 50vh;
+    height: 80vh;
+    padding-top: 10%;
   }
 
-  .input-email {
-    width: 39vw;
-    padding-right: 100px;
+  .footer-brand {
+    font-size: 65px;
+    width: 306px;
+    margin-top: 12px;
+    letter-spacing: -1.8px;
+    line-height: 72px;
   }
+
+  .share-email {
+    top: 65%;
+    right: 0px;
+    width: 93%;
+  }
+
+
 }
 
 @media screen and (max-width: 560px) {
@@ -2467,6 +2505,8 @@ footer {
     top: -57px;
     letter-spacing: -1.3px;
   }
+
+
 }
 
 @media screen and (max-width: 500px) {
@@ -2569,8 +2609,7 @@ footer {
   }
 
   .footer-brand {
-    font-size: 24px;
-    width: 109px;
+    width: 355px;
     margin-top: 12px;
     letter-spacing: -1.4px;
   }
@@ -2579,9 +2618,6 @@ footer {
     font-size: 12px;
   }
 
-  .input-email {
-    width: 44vw;
-  }
 
   .black-button,
   .outline-button {
@@ -2614,6 +2650,11 @@ footer {
     height: 74vh;
     padding-bottom: 24px;
   }
+
+  .contact-button {
+    right: 8.3%;
+  }
+
 
 }
 
@@ -2716,42 +2757,6 @@ footer {
 
 }
 
-/* .toggle-menu {
-  position: relative;
-}
-
-.hamburger-button {
-  display: none;
-  cursor: pointer;
-}
-
-.hamburger-menu__inactive {
-  display: none;
-}
-
-.hamburger-menu__active {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  width: 100px;
-  background: rgb(255, 255, 255);
-  height: 100px;
-  color: black;
-  font-size: 24px;
-
-}
-
-@media screen and (max-width: 700px) {
-  .hamburger-button {
-    display: block;
-    position: relative;
-  }
-
-  .nav-items {
-    display: none;
-  }
-} */
-
 .toggle-menu {
   position: relative;
   /* Contains both the button and the menu */
@@ -2765,22 +2770,28 @@ footer {
   display: none;
 }
 
+
+
+a {
+  text-decoration: none;
+  color: black;
+  padding: 24px;
+}
+
 .hamburger-menu__active {
   display: flex;
   flex-direction: column;
   align-items: left;
-  background: red;
+  background: rgb(255, 255, 255);
   position: absolute;
   top: 100%;
-  /* Adjust if necessary */
-  right: 0;
-  /* Aligns the menu to the right side */
-  width: 300px;
-  /* Adjust based on your design */
+  right: -24px;
+  width: 100vw;
+  height: 100vh;
   color: black;
   font-size: 16px;
   z-index: 9;
-  /* Keep above other content but below the button */
+  text-decoration: none;
 }
 
 @media screen and (max-width: 700px) {
@@ -2788,6 +2799,10 @@ footer {
   .hamburger-button,
   .hamburger-menu {
     display: block;
+  }
+
+  .hamburger-menu__active {
+    margin-top: 48px;
   }
 
   .nav-items {
@@ -2800,4 +2815,9 @@ footer {
   .user-experience-section {
     height: 88vh;
   }
+}
+
+.no-underline {
+  text-decoration: none;
+  padding: 0px;
 }
