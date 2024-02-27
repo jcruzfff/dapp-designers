@@ -3146,7 +3146,7 @@ a {
     /* Ensure the initial position is set */
     transform: translateX(0);
     /* Animation for moving back and forth */
-    animation: floatLeftRight 40s linear infinite;
+    animation: floatLeftRight 60s linear infinite;
   }
 
   /* Keyframes for the animation */
