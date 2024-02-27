@@ -174,10 +174,23 @@
         </h2>
       </div>
     </div>
-    <img src="./images/accessible-timline.svg" alt="status-bar" class="status-bar" />
+
+    <div class="roadmap">
+      <div class="path-background"></div> <!-- Background path for the trajectory -->
+      <div class="animated-line"></div> <!-- Animated dotted line -->
+      <div class="milestone"></div>
+      <div class="milestone"></div>
+      <div class="milestone"></div>
+    </div>
     <button class="button accessible-button" type="button" onclick="scrollToPricing()">View
       Pricing</button>
   </div>
+
+
+
+
+
+
 
 
 
@@ -718,6 +731,7 @@
       </div>
     </div>
 
+
     <!-- ------------ Everyone Section -------------- -->
 
     <div class="circle-img">
@@ -1087,18 +1101,17 @@
             if (entry.isIntersecting) {
               entry.target.classList.add('animate');
             } else {
-              // Optional: Reset the class if you want the animation to occur every time
-              // the element scrolls into view. Remove this else block if you want
-              // the animation to only happen once.
+              // Optional: Reset the class if desired
               entry.target.classList.remove('animate');
             }
           });
         }, {
-          threshold: 0.3, // Adjust as needed
+          threshold: 0.3, // Trigger when 30% of the target is within the viewport
         });
 
-        // Target elements for animation
-        const elementsToAnimate = document.querySelectorAll('.accessible-content-bullet, .status-bar, .accessible-button');
+        // Target additional elements for animation
+        const elementsToAnimate = document.querySelectorAll('.accessible-content-bullet, .roadmap, .accessible-button');
+
         elementsToAnimate.forEach((element) => {
           observer.observe(element);
         });

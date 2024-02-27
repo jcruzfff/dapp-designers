@@ -3168,3 +3168,146 @@ a {
     }
   }
 }
+
+.accessible-content {
+  margin-bottom: 42px;
+}
+
+.roadmap {
+  position: relative;
+  width: 70%;
+  height: 24px;
+  margin: auto;
+}
+
+.path-background {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #fffbfb27;
+  top: 0px;
+  margin: auto;
+  border-radius: 4px;
+}
+
+.animated-line {
+  position: absolute;
+  height: 2px;
+  background: repeating-linear-gradient(to right, #fff 0, #fff 4px, transparent 4px, transparent 8px);
+  top: 4px;
+  width: 0;
+  opacity: 0.7;
+  /* Slightly reduce opacity for the entire line */
+  animation: drawLineOpacity 1.5s linear forwards;
+  /* Updated animation name */
+}
+
+.milestone {
+  position: absolute;
+  bottom: -1.5px;
+  width: 42px;
+  height: 42px;
+  background-color: #fffbfb27;
+  /* Color to match the path */
+  border-radius: 50%;
+  /* No longer need to explicitly animate this element */
+}
+
+.milestone::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 21px;
+  height: 21px;
+  background-color: #ffffff17;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: lightUpCircle 0.5s linear forwards;
+  /* Adjust this duration to control the quickness of the light-up effect */
+}
+
+.milestone::after {
+  content: attr(data-label);
+  position: absolute;
+  width: 120px;
+  left: -50px;
+  top: 45px;
+  /* Adjust vertical position to accommodate the bigger circle */
+  text-align: center;
+}
+
+/* Updated CSS to control animation with `.animate` class */
+.animated-line,
+.milestone::before {
+  animation: none;
+  /* Disable automatic animation */
+}
+
+.animate .animated-line {
+  animation: drawLineOpacity 1.5s linear forwards;
+}
+
+.animate .milestone::before {
+  animation: lightUpCircle 0.5s linear forwards;
+}
+
+@keyframes drawLineOpacity {
+  0% {
+    width: 0%;
+    opacity: 0;
+    /* Start from fully transparent */
+  }
+
+  100% {
+    width: 85%;
+    /* Updated to stop at the position of the third milestone */
+    opacity: 1;
+    /* Fully opaque by the end */
+  }
+}
+
+/* Keyframes for lighting up the inner circle */
+@keyframes lightUpCircle {
+  from {
+    background-color: #fffbfb27;
+    /* Starting from transparent */
+  }
+
+  to {
+    background-color: #ffffff;
+    /* Transition to bright white */
+  }
+}
+
+
+
+/* Adjust your positioning and delays here for each milestone */
+.milestone:nth-child(3) {
+  left: 13%;
+}
+
+.milestone:nth-child(4) {
+  left: 47%;
+}
+
+.milestone:nth-child(5) {
+  left: 87%;
+  transform: translateX(-100%);
+}
+
+/* Target the ::before pseudo-element of each milestone specifically */
+.roadmap .milestone:nth-child(3)::before {
+  animation-delay: 0.2s;
+  /* Adjust according to the line animation's progress to the first milestone */
+}
+
+.roadmap .milestone:nth-child(4)::before {
+  animation-delay: 0.7s;
+  /* Delay till the line reaches the second milestone */
+}
+
+.roadmap .milestone:nth-child(5)::before {
+  animation-delay: 1.3s;
+  /* Delay till the line reaches the third milestone */
+}
