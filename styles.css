@@ -2545,6 +2545,12 @@ footer {
     top: -97px;
   }
 
+  @media screen and (max-width: 404px) and (max-height: 797px) {
+    .section-header-everyone {
+      top: -78px;
+    }
+  }
+
   .hero-section {
     height: 68vh;
   }
