@@ -887,7 +887,7 @@ nav {
 
 .section-subheader-strategy {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
   margin-left: 40px;
   margin-bottom: 48px;
 }
@@ -2313,13 +2313,9 @@ footer {
     margin-top: -106px;
   }
 
-  .input-email,
-  .contact-button {
-    font-size: 12px;
-  }
 
   .contact-button {
-    width: 30%;
+    width: 28%;
   }
 
   .dd-logo-small {
@@ -2372,8 +2368,8 @@ footer {
     padding-left: 32px;
     right: 0px;
     width: 93%;
-    height: 62px;
-    font-size: 24px;
+    height: 58px;
+    font-size: 20px;
   }
 
   .share-email {
@@ -2384,9 +2380,9 @@ footer {
 
   .contact-button {
     right: 8%;
-    font-size: 24px;
-    height: 52px;
+    height: 50px;
     border-radius: 24px;
+    width: 28%;
   }
 
 }
@@ -2668,9 +2664,10 @@ footer {
   }
 
   .footer-brand {
-    width: 300px;
+    width: 257px;
     margin-top: 12px;
     letter-spacing: -1.4px;
+    font-size: 52px;
   }
 
   .dapp-designers-footer {
