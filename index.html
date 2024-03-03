@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -821,454 +822,457 @@
 
     <img src="./images/dd-logo-footer.svg" alt="" class="dd-logo-footer" />
 
-
-
-    <script>
-      // Faqs open
-
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.faq-content-header').forEach(function (header) {
-          header.addEventListener('click', function () {
-            // Assuming the .faq-answer is a sibling of the clicked header's parent
-            const answer = this.parentNode.querySelector('.faq-answer');
-            const svg = this.querySelector('.faq-toggle'); // Find the svg within the header
-
-            if (answer.classList.contains('show')) {
-              answer.classList.remove('show');
-              svg.classList.remove('rotate'); // Reverse the rotation
-              this.classList.remove('active'); // Remove the purple color from the question
-            } else {
-              answer.classList.add('show');
-              svg.classList.add('rotate'); // Apply the rotation
-              this.classList.add('active'); // Make the question text purple
-            }
-          });
-        });
-      });
-
-
-      // Hamburger menu
-
-
-      document.addEventListener('DOMContentLoaded', function () {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        // Ensure the initial state is set correctly
-        hamburgerMenu.className = 'hamburger-menu__inactive';
-
-        // Your existing toggle function or related logic here...
-      });
-
-      function toggleMenu() {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        hamburgerMenu.className = hamburgerMenu.className === "hamburger-menu__active" ? "hamburger-menu__inactive" : "hamburger-menu__active";
-      }
-
-      document.querySelectorAll('.hamburger-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          // Assuming 'hamburger-menu__inactive' is the class that hides your menu
-          document.getElementById('hamburger-menu').className = 'hamburger-menu__inactive';
-        });
-      });
-
-      document.addEventListener('click', function (event) {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const toggleButton = document.getElementById('hamburger'); // Assuming your toggle button has this ID
-        const clickInsideMenu = hamburgerMenu.contains(event.target);
-        const clickOnToggleButton = toggleButton.contains(event.target);
-
-        if (!clickInsideMenu && !clickOnToggleButton && hamburgerMenu.className.includes('hamburger-menu__active')) {
-          // Close the menu if it's open and the click was outside
-          hamburgerMenu.className = 'hamburger-menu__inactive';
-        }
-      });
-
-      function scrollToPricing() {
-        const pricingSection = document.getElementById('pricing-section');
-        pricingSection.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      function scrollToFaqs() {
-        const faqSection = document.getElementById('faq-section');
-        faqSection.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      function sendEmail() {
-        var userMessage = document.getElementById('userMessage').value;
-        if (userMessage) {
-          // Construct the mailto link with the user's message.
-          var mailtoLink = 'mailto:admin@dappdesigners.com?subject=Message%20from%20a%20Visitor&body=' + encodeURIComponent(userMessage);
-          // Open the default email client with the mailto link.
-          window.location.href = mailtoLink;
-        } else {
-          alert("Please enter a message.");
-        }
-      }
-
-      // This function changes the pricing page
-
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.getElementById('userMessage').value = ''; // Clear the input field
-      });
-
-      const pricingOptions = {
-        monthly: {
-          startUp: {
-            title: "Start up",
-            price: "$2,299.00",
-            period: "/month",
-            features: [
-
-            ]
-          },
-          enterprise: {
-            title: "Enterprise",
-            price: "$4,500.00",
-            period: "/month",
-            features: [
-
-            ]
-          }
-        },
-        quarterly: {
-          startUp: {
-            title: "Start up",
-            price: "$6,299.00",
-            period: "/quarterly",
-            features: [
-
-            ]
-          },
-          enterprise: {
-            title: "Enterprise",
-            price: "$12,299.00",
-            period: "/quarterly",
-            features: [
-
-            ]
-          }
-        }
-      };
-
-
-      function toggleForMonthly() {
-        updatePricing('monthly');
-      }
-
-      function toggleForQuarterly() {
-        updatePricing('quarterly');
-      }
-
-      function updatePricing(optionType) {
-        // Fetching the appropriate data based on the selection
-        const optionData = pricingOptions[optionType];
-
-        // Correctly setting the content using 'subscriptions-period' as per your HTML and CSS
-
-        // Update Start-up Card
-        const startUpPriceHTML = `${optionData.startUp.price}
-  <span class="subscriptions-period">${optionData.startUp.period}</span>`;
-        document.querySelector('.pricing-card.startup .price').innerHTML = startUpPriceHTML;
-
-        // Update Enterprise Card
-        const enterprisePriceHTML = `${optionData.enterprise.price}
-  <span class="subscriptions-period">${optionData.enterprise.period}</span>`;
-        document.querySelector('.pricing-card.enterprise .price').innerHTML = enterprisePriceHTML;
-      }
-
-      function updateFeatures(listElement, features) {
-        listElement.innerHTML = ''; // Clear previous features
-        features.forEach(feature => {
-          const li = document.createElement('li');
-          li.textContent = feature;
-          listElement.appendChild(li);
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add click event listener to 'monthly' option
-        document.querySelector('.monthly').addEventListener('click', function () {
-          this.classList.add('active');
-          document.querySelector('.quarterly').classList.remove('active');
-        });
-
-        // Add click event listener to 'quarterly' option
-        document.querySelector('.quarterly').addEventListener('click', function () {
-          this.classList.add('active');
-          document.querySelector('.monthly').classList.remove('active');
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-
-        var startupButton = document.getElementById('startup')
-        var enterpriseButton = document.getElementById('enterprise')
-
-
-        // Set 'Monthly' as the active option on page load
-        document.querySelector('.monthly').classList.add('active');
-        document.querySelector('.quarterly').classList.remove('active');
-        // Initially display 'Monthly' pricing
-        updatePricing('monthly');
-
-        document.querySelector('.quarterly').addEventListener('click', function () {
-          this.classList.add('active');
-          document.querySelector('.monthly').classList.remove('active');
-          updatePricing('quarterly');
-
-          while (startupButton.firstChild) {
-            startupButton.removeChild(startupButton.firstChild);
-          }
-
-          while (enterpriseButton.firstChild) {
-            enterpriseButton.removeChild(enterpriseButton.firstChild);
-          }
-
-          var newButton = document.createElement('stripe-buy-button')
-          var newButton2 = document.createElement('stripe-buy-button')
-
-          // Startup
-          newButton.setAttribute("buy-button-id", "buy_btn_1OnYztBQlrsabuPOMCVVal2K")
-          newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
-          startupButton.appendChild(newButton)
-          // Enterprise
-          newButton2.setAttribute("buy-button-id", "buy_btn_1OnZBIBQlrsabuPO4aQotVd7")
-          newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
-          enterpriseButton.appendChild(newButton2)
-        });
-
-        document.querySelector('.monthly').addEventListener('click', function () {
-          this.classList.add('active');
-          document.querySelector('.quarterly').classList.remove('active');
-          updatePricing('monthly');
-
-          while (startupButton.firstChild) {
-            startupButton.removeChild(startupButton.firstChild);
-          }
-
-          while (enterpriseButton.firstChild) {
-            enterpriseButton.removeChild(enterpriseButton.firstChild);
-          }
-          var newButton = document.createElement('stripe-buy-button')
-          var newButton2 = document.createElement('stripe-buy-button')
-
-          // Startup
-          newButton.setAttribute("buy-button-id", "buy_btn_1OnXdTBQlrsabuPOx2kYt8fe")
-          newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
-          startupButton.appendChild(newButton)
-          // Enterprise
-          newButton2.setAttribute("buy-button-id", "buy_btn_1OnYcuBQlrsabuPO4hbT9Sg4")
-          newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
-          enterpriseButton.appendChild(newButton2)
-        });
-
-      });
-
-      // Scrolling the hero to the left
-
-      document.addEventListener('DOMContentLoaded', () => {
-        let lastKnownScrollPosition = 0;
-        let ticking = false;
-        const heroImage = document.querySelector('.hero-image-container');
-
-        function doSomething(scrollPos) {
-          if (window.innerWidth > 600) {
-            // Your existing logic for desktop
-            const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
-            const maxShiftPercentage = 180; // Maximum shift to the left as a percentage
-            const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
-            heroImage.style.transform = `translateX(-${shiftAmount}%)`;
-          }
-        }
-
-        document.addEventListener('scroll', function (e) {
-          lastKnownScrollPosition = window.scrollY;
-
-          if (!ticking && window.innerWidth > 600) {
-            window.requestAnimationFrame(function () {
-              doSomething(lastKnownScrollPosition);
-              ticking = false;
-            });
-
-            ticking = true;
-          }
-        });
-      });
-
-      // This brings in the accessible section
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate');
-            } else {
-              // Optional: Reset the class if desired
-              entry.target.classList.remove('animate');
-            }
-          });
-        }, {
-          threshold: 0.3, // Trigger when 30% of the target is within the viewport
-        });
-
-        // Target additional elements for animation
-        const elementsToAnimate = document.querySelectorAll('.accessible-content-bullet, .roadmap, .accessible-button');
-
-        elementsToAnimate.forEach((element) => {
-          observer.observe(element);
-        });
-      });
-
-      // User Experience comes to life
-      document.addEventListener('DOMContentLoaded', function () {
-        let uxSectionEntered = false;
-
-        // General observer for .experience-title, .btns, and .mobile-phones-experience animations
-        const generalObserver = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              if (entry.target.classList.contains('experience-title') || entry.target.classList.contains('btns')) {
-                // Apply slide in from left without delay
-                entry.target.style.animation = 'slideFromLeft 0.8s forwards';
-              } else if (entry.target.classList.contains('mobile-phones-experience')) {
-                // Apply slide in from bottom with delay if UX section has been entered
-                entry.target.style.animation = uxSectionEntered ? 'slideFromBottom 0.8s forwards 0.5s' : 'slideFromBottom 0.8s forwards';
-              }
-            }
-          });
-        }, { threshold: 0.1 });
-
-        // Observers to animate elements once UX section enters viewport to a significant degree (30%)
-        const uxSectionObserver = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
-              uxSectionEntered = true; // Mark the UX section as entered
-              // Trigger the slide down animation for .page-section
-              const pageSection = document.querySelector('.page-section');
-              pageSection.style.animation = 'slideDown 0.8s forwards';
-              // Optional: Comment out the next line if you want the animation to repeat on re-entry
-              uxSectionObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: [0.4] });
-
-        // Target elements for the general animations
-        const elementsToAnimate = document.querySelectorAll('.experience-title, .btns, .mobile-phones-experience');
-        elementsToAnimate.forEach(el => generalObserver.observe(el));
-
-        // Start observing the user experience section to manage the entry marking and trigger .page-section animation
-        uxSectionObserver.observe(document.querySelector('.user-experience-section'));
-      });
-
-      // This brings the product section into the viewport
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = 'translateY(0)'; // Moves the element to its original position
-              observer.unobserve(entry.target); // Optional: Stop observing the element after the animation
-            }
-          });
-        }, {
-          threshold: 0.1 // Trigger when 50% of the element is in view
-        });
-
-        // Observe all .product-mobile-phone elements
-        document.querySelectorAll('.product-mobile-phone').forEach(item => {
-          observer.observe(item);
-        });
-      });
-
-      // This makes the strategies pop in
-      document.addEventListener('DOMContentLoaded', () => {
-        let lastScrollY = window.scrollY;
-
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            // Check if scrolling down
-            const currentScrollY = window.scrollY;
-            if (entry.isIntersecting && currentScrollY > lastScrollY) {
-              // Remove the class first to reset animation state
-              entry.target.classList.remove('animate');
-
-              // Trigger reflow to effectively reset the animation
-              void entry.target.offsetWidth;
-
-              // Add the class back to trigger the animation
-              entry.target.classList.add('animate');
-            }
-            lastScrollY = currentScrollY; // Update last scroll position after handling each entry
-          });
-        }, {
-          threshold: [0.1]
-        });
-
-        // Target elements within the strategy section you wish to animate
-        const elementsToAnimate = document.querySelectorAll('.strategy-bullet-header img, .strategy-bullet-header, .strategy-bullet-subheader');
-        elementsToAnimate.forEach(element => {
-          observer.observe(element);
-        });
-      });
-
-      // Spin animation
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            const logo = entry.target;
-            if (entry.isIntersecting) {
-              // Directly manipulating the style to restart the animation
-              logo.style.animation = 'none'; // Reset animation
-              requestAnimationFrame(() => {
-                // Force a reflow to ensure the reset fully applies
-                logo.offsetHeight; // Reading offsetHeight forces a reflow
-                // Restart the animation
-                logo.style.animation = 'spinScale 0.5s ease-in-out forwards';
-              });
-            }
-          });
-        }, {
-          threshold: 0.1 // Adjust this value based on when you want the animation to trigger
-        });
-
-        // Start observing the logo
-        const logo = document.querySelector('.dapp-designers-logo-small');
-        observer.observe(logo);
-      });
-
-      // Bounce animation
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            const logo = entry.target;
-            if (entry.isIntersecting) {
-              logo.classList.add('animate');
-            } else {
-              // Ensure the animate class is removed when not in view
-              logo.classList.remove('animate');
-            }
-          });
-        }, {
-          threshold: 0.5 // Adjust according to the desired trigger point
-        });
-
-        // Start observing the image element
-        const logoImage = document.querySelector('.circle-img .dd-logo-round');
-        observer.observe(logoImage);
-
-        // Re-apply animation by listening to when it ends
-        logoImage.addEventListener('animationend', () => {
-          // This ensures the animation can re-trigger by removing 'animate' class
-          logoImage.classList.remove('animate');
-          // Optionally, force a reflow to ensure CSS recognizes the re-addition of 'animate' class in future
-          void logoImage.offsetWidth;
-        });
-      });
-
-    </script>
-
-    <script async src="https://js.stripe.com/v3/buy-button.js">
-    </script>
-
 </body>
+
+<script>
+  // Faqs open
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-content-header').forEach(function (header) {
+      header.addEventListener('click', function () {
+        // Assuming the .faq-answer is a sibling of the clicked header's parent
+        const answer = this.parentNode.querySelector('.faq-answer');
+        const svg = this.querySelector('.faq-toggle'); // Find the svg within the header
+
+        if (answer.classList.contains('show')) {
+          answer.classList.remove('show');
+          svg.classList.remove('rotate'); // Reverse the rotation
+          this.classList.remove('active'); // Remove the purple color from the question
+        } else {
+          answer.classList.add('show');
+          svg.classList.add('rotate'); // Apply the rotation
+          this.classList.add('active'); // Make the question text purple
+        }
+      });
+    });
+  });
+
+
+  // Hamburger menu
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    // Ensure the initial state is set correctly
+    hamburgerMenu.className = 'hamburger-menu__inactive';
+
+    // Your existing toggle function or related logic here...
+  });
+
+  function toggleMenu() {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    hamburgerMenu.className = hamburgerMenu.className === "hamburger-menu__active" ? "hamburger-menu__inactive" : "hamburger-menu__active";
+  }
+
+  document.querySelectorAll('.hamburger-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      // Assuming 'hamburger-menu__inactive' is the class that hides your menu
+      document.getElementById('hamburger-menu').className = 'hamburger-menu__inactive';
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const toggleButton = document.getElementById('hamburger'); // Assuming your toggle button has this ID
+    const clickInsideMenu = hamburgerMenu.contains(event.target);
+    const clickOnToggleButton = toggleButton.contains(event.target);
+
+    if (!clickInsideMenu && !clickOnToggleButton && hamburgerMenu.className.includes('hamburger-menu__active')) {
+      // Close the menu if it's open and the click was outside
+      hamburgerMenu.className = 'hamburger-menu__inactive';
+    }
+  });
+
+  function scrollToPricing() {
+    const pricingSection = document.getElementById('pricing-section');
+    pricingSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToFaqs() {
+    const faqSection = document.getElementById('faq-section');
+    faqSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function sendEmail() {
+    var userMessage = document.getElementById('userMessage').value;
+    if (userMessage) {
+      // Construct the mailto link with the user's message.
+      var mailtoLink = 'mailto:admin@dappdesigners.com?subject=Message%20from%20a%20Visitor&body=' + encodeURIComponent(userMessage);
+      // Open the default email client with the mailto link.
+      window.location.href = mailtoLink;
+    } else {
+      alert("Please enter a message.");
+    }
+  }
+
+  // This function changes the pricing page
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('userMessage').value = ''; // Clear the input field
+  });
+
+  const pricingOptions = {
+    monthly: {
+      startUp: {
+        title: "Start up",
+        price: "$2,299.00",
+        period: "/month",
+        features: [
+
+        ]
+      },
+      enterprise: {
+        title: "Enterprise",
+        price: "$4,500.00",
+        period: "/month",
+        features: [
+
+        ]
+      }
+    },
+    quarterly: {
+      startUp: {
+        title: "Start up",
+        price: "$6,299.00",
+        period: "/quarterly",
+        features: [
+
+        ]
+      },
+      enterprise: {
+        title: "Enterprise",
+        price: "$12,299.00",
+        period: "/quarterly",
+        features: [
+
+        ]
+      }
+    }
+  };
+
+
+  function toggleForMonthly() {
+    updatePricing('monthly');
+  }
+
+  function toggleForQuarterly() {
+    updatePricing('quarterly');
+  }
+
+  function updatePricing(optionType) {
+    // Fetching the appropriate data based on the selection
+    const optionData = pricingOptions[optionType];
+
+    // Correctly setting the content using 'subscriptions-period' as per your HTML and CSS
+
+    // Update Start-up Card
+    const startUpPriceHTML = `${optionData.startUp.price}
+<span class="subscriptions-period">${optionData.startUp.period}</span>`;
+    document.querySelector('.pricing-card.startup .price').innerHTML = startUpPriceHTML;
+
+    // Update Enterprise Card
+    const enterprisePriceHTML = `${optionData.enterprise.price}
+<span class="subscriptions-period">${optionData.enterprise.period}</span>`;
+    document.querySelector('.pricing-card.enterprise .price').innerHTML = enterprisePriceHTML;
+  }
+
+  function updateFeatures(listElement, features) {
+    listElement.innerHTML = ''; // Clear previous features
+    features.forEach(feature => {
+      const li = document.createElement('li');
+      li.textContent = feature;
+      listElement.appendChild(li);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add click event listener to 'monthly' option
+    document.querySelector('.monthly').addEventListener('click', function () {
+      this.classList.add('active');
+      document.querySelector('.quarterly').classList.remove('active');
+    });
+
+    // Add click event listener to 'quarterly' option
+    document.querySelector('.quarterly').addEventListener('click', function () {
+      this.classList.add('active');
+      document.querySelector('.monthly').classList.remove('active');
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var startupButton = document.getElementById('startup')
+    var enterpriseButton = document.getElementById('enterprise')
+
+
+    // Set 'Monthly' as the active option on page load
+    document.querySelector('.monthly').classList.add('active');
+    document.querySelector('.quarterly').classList.remove('active');
+    // Initially display 'Monthly' pricing
+    updatePricing('monthly');
+
+    document.querySelector('.quarterly').addEventListener('click', function () {
+      this.classList.add('active');
+      document.querySelector('.monthly').classList.remove('active');
+      updatePricing('quarterly');
+
+      while (startupButton.firstChild) {
+        startupButton.removeChild(startupButton.firstChild);
+      }
+
+      while (enterpriseButton.firstChild) {
+        enterpriseButton.removeChild(enterpriseButton.firstChild);
+      }
+
+      var newButton = document.createElement('stripe-buy-button')
+      var newButton2 = document.createElement('stripe-buy-button')
+
+      // Startup
+      newButton.setAttribute("buy-button-id", "buy_btn_1OnYztBQlrsabuPOMCVVal2K")
+      newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+      startupButton.appendChild(newButton)
+      // Enterprise
+      newButton2.setAttribute("buy-button-id", "buy_btn_1OnZBIBQlrsabuPO4aQotVd7")
+      newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+      enterpriseButton.appendChild(newButton2)
+    });
+
+    document.querySelector('.monthly').addEventListener('click', function () {
+      this.classList.add('active');
+      document.querySelector('.quarterly').classList.remove('active');
+      updatePricing('monthly');
+
+      while (startupButton.firstChild) {
+        startupButton.removeChild(startupButton.firstChild);
+      }
+
+      while (enterpriseButton.firstChild) {
+        enterpriseButton.removeChild(enterpriseButton.firstChild);
+      }
+      var newButton = document.createElement('stripe-buy-button')
+      var newButton2 = document.createElement('stripe-buy-button')
+
+      // Startup
+      newButton.setAttribute("buy-button-id", "buy_btn_1OnXdTBQlrsabuPOx2kYt8fe")
+      newButton.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+      startupButton.appendChild(newButton)
+      // Enterprise
+      newButton2.setAttribute("buy-button-id", "buy_btn_1OnYcuBQlrsabuPO4hbT9Sg4")
+      newButton2.setAttribute("publishable-key", "pk_live_51OnWpqBQlrsabuPO8wG7cW1Al9ZsIZyXkwMpvIpUQYQ075RKOIvdsDpCs5ZppGgJ4cWHusemIqc6LI8vFPwtSjOX00oGuDeBTh")
+      enterpriseButton.appendChild(newButton2)
+    });
+
+  });
+
+  // Scrolling the hero to the left
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+    const heroImage = document.querySelector('.hero-image-container');
+
+    function doSomething(scrollPos) {
+      if (window.innerWidth > 600) {
+        // Your existing logic for desktop
+        const scrollPercentage = scrollPos / (document.documentElement.scrollHeight - window.innerHeight);
+        const maxShiftPercentage = 180; // Maximum shift to the left as a percentage
+        const shiftAmount = maxShiftPercentage * scrollPercentage; // Calculate shift amount based on scroll
+        heroImage.style.transform = `translateX(-${shiftAmount}%)`;
+      }
+    }
+
+    document.addEventListener('scroll', function (e) {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking && window.innerWidth > 600) {
+        window.requestAnimationFrame(function () {
+          doSomething(lastKnownScrollPosition);
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    });
+  });
+
+  // This brings in the accessible section
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          // Optional: Reset the class if desired
+          entry.target.classList.remove('animate');
+        }
+      });
+    }, {
+      threshold: 0.3, // Trigger when 30% of the target is within the viewport
+    });
+
+    // Target additional elements for animation
+    const elementsToAnimate = document.querySelectorAll('.accessible-content-bullet, .roadmap, .accessible-button');
+
+    elementsToAnimate.forEach((element) => {
+      observer.observe(element);
+    });
+  });
+
+  // User Experience comes to life
+  document.addEventListener('DOMContentLoaded', function () {
+    let uxSectionEntered = false;
+
+    // General observer for .experience-title, .btns, and .mobile-phones-experience animations
+    const generalObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('experience-title') || entry.target.classList.contains('btns')) {
+            // Apply slide in from left without delay
+            entry.target.style.animation = 'slideFromLeft 0.8s forwards';
+          } else if (entry.target.classList.contains('mobile-phones-experience')) {
+            // Apply slide in from bottom with delay if UX section has been entered
+            entry.target.style.animation = uxSectionEntered ? 'slideFromBottom 0.8s forwards 0.5s' : 'slideFromBottom 0.8s forwards';
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observers to animate elements once UX section enters viewport to a significant degree (30%)
+    const uxSectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+          uxSectionEntered = true; // Mark the UX section as entered
+          // Trigger the slide down animation for .page-section
+          const pageSection = document.querySelector('.page-section');
+          pageSection.style.animation = 'slideDown 0.8s forwards';
+          // Optional: Comment out the next line if you want the animation to repeat on re-entry
+          uxSectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: [0.4] });
+
+    // Target elements for the general animations
+    const elementsToAnimate = document.querySelectorAll('.experience-title, .btns, .mobile-phones-experience');
+    elementsToAnimate.forEach(el => generalObserver.observe(el));
+
+    // Start observing the user experience section to manage the entry marking and trigger .page-section animation
+    uxSectionObserver.observe(document.querySelector('.user-experience-section'));
+  });
+
+  // This brings the product section into the viewport
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)'; // Moves the element to its original position
+          observer.unobserve(entry.target); // Optional: Stop observing the element after the animation
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 50% of the element is in view
+    });
+
+    // Observe all .product-mobile-phone elements
+    document.querySelectorAll('.product-mobile-phone').forEach(item => {
+      observer.observe(item);
+    });
+  });
+
+  // This makes the strategies pop in
+  document.addEventListener('DOMContentLoaded', () => {
+    let lastScrollY = window.scrollY;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // Check if scrolling down
+        const currentScrollY = window.scrollY;
+        if (entry.isIntersecting && currentScrollY > lastScrollY) {
+          // Remove the class first to reset animation state
+          entry.target.classList.remove('animate');
+
+          // Trigger reflow to effectively reset the animation
+          void entry.target.offsetWidth;
+
+          // Add the class back to trigger the animation
+          entry.target.classList.add('animate');
+        }
+        lastScrollY = currentScrollY; // Update last scroll position after handling each entry
+      });
+    }, {
+      threshold: [0.1]
+    });
+
+    // Target elements within the strategy section you wish to animate
+    const elementsToAnimate = document.querySelectorAll('.strategy-bullet-header img, .strategy-bullet-header, .strategy-bullet-subheader');
+    elementsToAnimate.forEach(element => {
+      observer.observe(element);
+    });
+  });
+
+  // Spin animation
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const logo = entry.target;
+        if (entry.isIntersecting) {
+          // Directly manipulating the style to restart the animation
+          logo.style.animation = 'none'; // Reset animation
+          requestAnimationFrame(() => {
+            // Force a reflow to ensure the reset fully applies
+            logo.offsetHeight; // Reading offsetHeight forces a reflow
+            // Restart the animation
+            logo.style.animation = 'spinScale 0.5s ease-in-out forwards';
+          });
+        }
+      });
+    }, {
+      threshold: 0.1 // Adjust this value based on when you want the animation to trigger
+    });
+
+    // Start observing the logo
+    const logo = document.querySelector('.dapp-designers-logo-small');
+    observer.observe(logo);
+  });
+
+  // Bounce animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const logo = entry.target;
+        if (entry.isIntersecting) {
+          logo.classList.add('animate');
+        } else {
+          // Ensure the animate class is removed when not in view
+          logo.classList.remove('animate');
+        }
+      });
+    }, {
+      threshold: 0.5 // Adjust according to the desired trigger point
+    });
+
+    // Start observing the image element
+    const logoImage = document.querySelector('.circle-img .dd-logo-round');
+    observer.observe(logoImage);
+
+    // Re-apply animation by listening to when it ends
+    logoImage.addEventListener('animationend', () => {
+      // This ensures the animation can re-trigger by removing 'animate' class
+      logoImage.classList.remove('animate');
+      // Optionally, force a reflow to ensure CSS recognizes the re-addition of 'animate' class in future
+      void logoImage.offsetWidth;
+    });
+  });
+
+</script>
+
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<script async src="https://js.stripe.com/v3/buy-button.js">
+</script>
 
 </html>
