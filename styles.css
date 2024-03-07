@@ -203,6 +203,10 @@ nav {
   /* Prevent default WebKit styling */
 }
 
+a.schedule-button {
+  padding: 0px;
+}
+
 .outline-button {
   display: inline-flex;
   padding: 16.5px 53.5px;
@@ -2655,6 +2659,8 @@ footer {
     font-size: 42px;
   }
 
+
+
   .section-header-pricing {
     font-size: 36px;
   }
@@ -2678,6 +2684,10 @@ footer {
   .black-button,
   .outline-button {
     padding: 14.5px 24.5px;
+  }
+
+  .outline-button {
+    margin-left: 0px;
   }
 
   .black-button {
