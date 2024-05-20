@@ -75,6 +75,17 @@ nav {
 }
 
 
+.hero {
+  font-size: 32px;
+  margin-top: 32px;
+  margin-left: 32px;
+}
+
+.hero-link {
+  text-decoration: underline;
+  color: #6e3ed5;
+}
+
 /* .gallery {
   display: flex;
   gap: 1rem;
